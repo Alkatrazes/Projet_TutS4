@@ -15,7 +15,7 @@
     
     
     <screen id="CreateCharacterScreen" controller="mygame.controls.screen.CreateCharacterScreenController">
-        <layer id="layer" childLayout="center">
+        <layer id="layer" childLayout="absolute">
             <image filename="Interface/Nifty/images/fondStartScreen.jpg"></image>
             <panel id="backPanel" height="79px" width="361px" align="center" valign="center" childLayout="center" visibleToMouse="true" x="27.5%"y="18.5%">
                 <control name="retour" id="back" label="Retour" visibleToMouse="true">

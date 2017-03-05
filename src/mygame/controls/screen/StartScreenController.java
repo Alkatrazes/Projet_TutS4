@@ -1,7 +1,6 @@
 package mygame.controls.screen;
 
 
-import com.jme3.app.Application;
 import com.jme3.app.SimpleApplication;
 import com.jme3.app.state.AbstractAppState;
 import com.jme3.app.state.AppStateManager;
@@ -44,32 +43,6 @@ public class StartScreenController extends AbstractAppState
     Element element;
     ViewPort guiViewPort;
     NiftyJmeDisplay niftyDisplay;
-    
-    public void initialize(AppStateManager stateManager, Application app){
-        super.initialize(stateManager, app);
-        this.app = (SimpleApplication) app;
-        this.stateManager = stateManager;
-        initPointers();
-        
-        niftyDisplay = new NiftyJmeDisplay(assetManager, inputManager, audioRenderer, guiViewPort);
-        nifty = niftyDisplay.getNifty();
-        nifty.fromXml("Interface/Nifty/startScreen.xml", "start", this);
-        guiViewPort.addProcessor(niftyDisplay);
-    }
-    
-    public void initPointers(){
-        this.assetManager = this.app.getAssetManager();
-        this.inputManager = this.app.getInputManager();
-        this.cam = this.app.getCamera();
-
-        this.guiNode = this.app.getGuiNode();
-        this.rootNode = this.app.getRootNode();
-        this.audioRenderer = this.app.getAudioRenderer();
-        this.viewPort = this.app.getViewPort();
-        this.guiViewPort = this.app.getGuiViewPort();
-        rootNode.attachChild(localRootNode);
-
-    }
     
     public void newGame() {
         nifty.gotoScreen("CreateCharacterScreen");
