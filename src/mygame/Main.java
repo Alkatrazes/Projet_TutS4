@@ -1,25 +1,37 @@
 package mygame;
 
 import com.jme3.app.SimpleApplication;
+import com.jme3.app.StatsAppState;
 import com.jme3.renderer.RenderManager;
-import mygame.controls.screen.StartScreenController;
+import com.jme3.system.AppSettings;
+
+import mygame.controls.screen.*;
 
 public class Main extends SimpleApplication {
-
-    StartScreenController startScreen;
+    
+    public static Main app;
     
     public static void main(String[] args) {
-        Main app = new Main();
-        app.start();
+        app = new Main(); 
+ 
+        AppSettings setting = new AppSettings(true); 
+        setting.setTitle("ProjectS4"); 
+        setting.setHeight(600); 
+        setting.setWidth(800); 
+
+        app.start(); 
     }
+    
+    public Main() {
+        super(new StatsAppState());
+    }
+    
     @Override
     public void simpleInitApp() {
         setDisplayFps(false);
         setDisplayStatView(false);
         
-        startScreen = new StartScreenController();
-        stateManager.attach(startScreen);
-        flyCam.setEnabled(false);
+        this.stateManager.attach(new GUI(this));
     }
 
     @Override
