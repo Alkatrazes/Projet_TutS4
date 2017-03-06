@@ -7,8 +7,14 @@
         
     </controlDefinition>
     
+    <controlDefinition name="valider" controller="mygame.controls.screen.CreateCharacterScreenController">
+        <image id="#boutonValiderPersonnage" style="#image" filename="Interface/Nifty/images/boutonValider.jpg"childLayout="center"
+            width="100%"height="100%"inherit="true" focusable="true"> 
+        </image>
+    </controlDefinition>
+    
     <controlDefinition name="retour" controller="mygame.controls.screen.CreateCharacterScreenController">
-        <image id="#boutonRetourEcranTitre" style="#image" filename="Interface/Nifty/images/boutonRetour.jpg"childLayout="center"
+        <image id="#boutonRetourEcranTitre" style="#image" filename="Interface/Nifty/images/boutonRetour2.jpg"childLayout="center"
             width="100%"height="100%"inherit="true" focusable="true"> 
         </image>
     </controlDefinition>
@@ -17,7 +23,12 @@
     <screen id="CreateCharacterScreen" controller="mygame.controls.screen.CreateCharacterScreenController">
         <layer id="layer" childLayout="absolute">
             <image filename="Interface/Nifty/images/fondStartScreen.jpg"></image>
-            <panel id="backPanel" height="79px" width="361px" align="center" valign="center" childLayout="center" visibleToMouse="true" x="27.5%"y="18.5%">
+            <panel id="backPanel" height="60px" width="181px" align="center" valign="center" childLayout="center" visibleToMouse="true" x="23.7%"y="78%">
+                <control name="valider" id="valider" label="Valider" visibleToMouse="true">
+                    <interact onClick="valid()"/>
+                </control>
+            </panel>
+            <panel id="backPanel" height="60px" width="181px" align="center" valign="center" childLayout="center" visibleToMouse="true" x="53.8%"y="78%">
                 <control name="retour" id="back" label="Retour" visibleToMouse="true">
                     <interact onClick="back()"/>
                 </control>
