@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <nifty xmlns="http://nifty-gui.sourceforge.net/nifty-1.3.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://nifty-gui.sourceforge.net/nifty-1.3.xsd http://nifty-gui.sourceforge.net/nifty-1.3.xsd">
+
+    <useControls filename="nifty-default-controls.xml" />
+    <useStyles filename="nifty-default-styles.xml" />   
+
     <!-- +++++++++++++++++++++++++++++++++++++++ -->
     <!-- start screen -->
     <!-- +++++++++++++++++++++++++++++++++++++++ -->
@@ -23,6 +27,29 @@
     <screen id="CreateCharacterScreen" controller="mygame.controls.screen.CreateCharacterScreenController">
         <layer id="layer" childLayout="absolute">
             <image filename="Interface/Nifty/images/fondStartScreen.jpg"></image>
+            <control name="textField" maxLength="20" text="Name" width="100px"/>
+            <control id="RadioGroupClasse" name="radioButtonGroup"/>
+            <panel childLayout="horizontal" x="25%" y="64%">
+                <panel childLayout="horizontal" paddingLeft="7px" paddingRight="7px" paddingTop="4px" paddingBottom="4px" width="150px">
+                    <control name="label" text="Classe : "/>
+                    <panel childLayout="horizontal">
+                        <control name="label" text="Behemoth" width="65px" />
+                        <control name="radioButton" id="classeBehemoth" group="RadioGroupClasse" />
+                    </panel>
+                    <panel childLayout="horizontal">
+                        <control name="label" text="Mage Zenital" width="85px" />
+                        <control name="radioButton" id="classeMage" group="RadioGroupClasse" />
+                    </panel>
+                    <panel childLayout="horizontal">
+                        <control name="label" text="AmbreDague" width="85px" />
+                        <control name="radioButton" id="classeAmbreDague" group="RadioGroupClasse" />
+                    </panel>
+                    <panel childLayout="horizontal">
+                        <control name="label" text="Travellers" width="70px" />
+                        <control name="radioButton" id="classeTravellers" group="RadioGroupClasse" />
+                    </panel>
+                </panel>
+            </panel>
             <panel id="backPanel" height="60px" width="181px" align="center" valign="center" childLayout="center" visibleToMouse="true" x="23.7%"y="78%">
                 <control name="valider" id="valider" label="Valider" visibleToMouse="true">
                     <interact onClick="valid()"/>
