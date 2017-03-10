@@ -7,9 +7,6 @@
     <!-- +++++++++++++++++++++++++++++++++++++++ -->
     <!-- start screen -->
     <!-- +++++++++++++++++++++++++++++++++++++++ -->
-    <controlDefinition name="nomPersonnage" controller="mygame.controls.screen.CreateCharacterScreenController">
-        
-    </controlDefinition>
     
     <controlDefinition name="valider" controller="mygame.controls.screen.CreateCharacterScreenController">
         <image id="#boutonValiderPersonnage" style="#image" filename="Interface/Nifty/images/boutonValider.jpg"childLayout="center"
@@ -27,26 +24,41 @@
     <screen id="CreateCharacterScreen" controller="mygame.controls.screen.CreateCharacterScreenController">
         <layer id="layer" childLayout="absolute">
             <image filename="Interface/Nifty/images/fondStartScreen.jpg"></image>
-            <control name="textField" maxLength="20" text="Name" width="100px"/>
-            <control id="RadioGroupClasse" name="radioButtonGroup"/>
-            <panel childLayout="horizontal" x="25%" y="64%">
+            <control name="label" text="Nom : " x="15%" y="27%"/>
+            <control id="input" name="textfield" width="200px" maxLength="25" x="24.3%" y="27%"/>
+            <control id="RadioGroupSexe" name="radioButtonGroup"/>
+            <control name="label" text="Sexe : " x="15%" y="43.5%"/>
+            <panel childLayout="horizontal" x="22.5%" y="43%">
                 <panel childLayout="horizontal" paddingLeft="7px" paddingRight="7px" paddingTop="4px" paddingBottom="4px" width="150px">
-                    <control name="label" text="Classe : "/>
                     <panel childLayout="horizontal">
-                        <control name="label" text="Behemoth" width="65px" />
-                        <control name="radioButton" id="classeBehemoth" group="RadioGroupClasse" />
+                        <control name="label" text="Femme" width="65px"/>
+                        <control name="radioButton" id="sexeFemme" group="RadioGroupSexe" paddingRight="19px"/>
                     </panel>
                     <panel childLayout="horizontal">
-                        <control name="label" text="Mage Zenital" width="85px" />
-                        <control name="radioButton" id="classeMage" group="RadioGroupClasse" />
+                        <control name="label" text="Homme" width="65px"/>
+                        <control name="radioButton" id="sexeHomme" group="RadioGroupSexe" paddingRight="19px"/>
+                    </panel>
+                </panel>
+            </panel>
+            <control id="RadioGroupClasse" name="radioButtonGroup"/>
+            <control name="label" text="Classe : " x="15%" y="59.5%"/>
+            <panel childLayout="horizontal" x="22.3%" y="59%">
+                <panel childLayout="horizontal" paddingLeft="7px" paddingRight="7px" paddingTop="4px" paddingBottom="4px" width="150px">
+                    <panel childLayout="horizontal">
+                        <control name="label" text="Behemoth" width="80px"/>
+                        <control name="radioButton" id="classeBehemoth" group="RadioGroupClasse" paddingRight="20px"/>
                     </panel>
                     <panel childLayout="horizontal">
-                        <control name="label" text="AmbreDague" width="85px" />
-                        <control name="radioButton" id="classeAmbreDague" group="RadioGroupClasse" />
+                        <control name="label" text="Mage Zenital" width="100px"/>
+                        <control name="radioButton" id="classeMage" group="RadioGroupClasse" paddingRight="24px"/>
+                    </panel>
+                    <panel childLayout="horizontal">
+                        <control name="label" text="AmbreDague" width="85px" paddingRight="20px"/>
+                        <control name="radioButton" id="classeAmbreDague" group="RadioGroupClasse" paddingRight="6px"/>
                     </panel>
                     <panel childLayout="horizontal">
                         <control name="label" text="Travellers" width="70px" />
-                        <control name="radioButton" id="classeTravellers" group="RadioGroupClasse" />
+                        <control name="radioButton" id="classeTravellers" group="RadioGroupClasse" paddingRight="6px"/>
                     </panel>
                 </panel>
             </panel>
