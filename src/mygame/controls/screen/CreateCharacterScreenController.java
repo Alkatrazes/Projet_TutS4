@@ -20,6 +20,10 @@ public class CreateCharacterScreenController implements ScreenController {
 
     private Nifty nifty;
     
+    public void valid() {
+        
+    }
+    
     public void back() {
         nifty.gotoScreen("StartScreen");
     }
