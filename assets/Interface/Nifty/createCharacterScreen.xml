@@ -23,12 +23,12 @@
     
     <screen id="CreateCharacterScreen" controller="mygame.controls.screen.CreateCharacterScreenController">
         <layer id="layer" childLayout="absolute">
-            <image filename="Interface/Nifty/images/fondStartScreen.jpg"></image>
-            <control name="label" text="Nom : " x="15%" y="27%"/>
-            <control id="input" name="textfield" width="200px" maxLength="25" x="24.3%" y="27%"/>
+            <image filename="Interface/Nifty/images/fondCreateCharacter.jpg"></image>
+            <control name="label" text="Nom : " x="15%" y="30%"/>
+            <control id="input" name="textfield" width="200px" maxLength="25" x="24.3%" y="30%"/>
             <control id="RadioGroupSexe" name="radioButtonGroup"/>
-            <control name="label" text="Sexe : " x="15%" y="43.5%"/>
-            <panel childLayout="horizontal" x="22.5%" y="43%">
+            <control name="label" text="Sexe : " x="15%" y="46.5%"/>
+            <panel childLayout="horizontal" x="22.5%" y="46%">
                 <panel childLayout="horizontal" paddingLeft="7px" paddingRight="7px" paddingTop="4px" paddingBottom="4px" width="150px">
                     <panel childLayout="horizontal">
                         <control name="label" text="Femme" width="65px"/>
@@ -41,8 +41,8 @@
                 </panel>
             </panel>
             <control id="RadioGroupClasse" name="radioButtonGroup"/>
-            <control name="label" text="Classe : " x="15%" y="59.5%"/>
-            <panel childLayout="horizontal" x="22.3%" y="59%">
+            <control name="label" text="Classe : " x="15%" y="62.5%"/>
+            <panel childLayout="horizontal" x="22.3%" y="62%">
                 <panel childLayout="horizontal" paddingLeft="7px" paddingRight="7px" paddingTop="4px" paddingBottom="4px" width="150px">
                     <panel childLayout="horizontal">
                         <control name="label" text="Behemoth" width="80px"/>
