@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nifty xmlns="http://nifty-gui.sourceforge.net/nifty-1.3.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://nifty-gui.sourceforge.net/nifty-1.3.xsd http://nifty-gui.sourceforge.net/nifty-1.3.xsd">
+    
+    <useControls filename="nifty-default-controls.xml" />
+    <useStyles filename="nifty-default-styles.xml" />  
+    
+    <!-- +++++++++++++++++++++++++++++++++++++++ -->
+    <!-- start screen -->
+    <!-- +++++++++++++++++++++++++++++++++++++++ -->
+    <popup id="EscapePopup" childLayout="center" controller="mygame.controls.screen.EscapePopupController.java">
+        <panel width="80%" height="25%" align="center" valign="center" childLayout="vertical" backgroundColor="#55a5" padding="10">
+            <panel height="21px" childLayout="horizontal">
+                <panel width="*" />
+                <control id="BtYes" name="button" label="Yes"/>
+                <panel width="*" />
+                <control id="BtNo" name="button" label="No"/>
+                <panel width="*" />
+            </panel>
+            <panel width="*" />
+        </panel>
+    </popup>
+</nifty>

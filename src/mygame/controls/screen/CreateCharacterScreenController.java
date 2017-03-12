@@ -5,12 +5,8 @@
 package mygame.controls.screen;
 
 import de.lessvoid.nifty.Nifty;
-import de.lessvoid.nifty.elements.Element;
-import de.lessvoid.nifty.input.NiftyInputEvent;
 import de.lessvoid.nifty.screen.Screen;
 import de.lessvoid.nifty.screen.ScreenController;
-import de.lessvoid.xml.xpp3.Attributes;
-import java.util.Properties;
 
 /**
  *
