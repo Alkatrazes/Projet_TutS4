@@ -4,9 +4,11 @@
  */
 package mygame.controls.screen;
 
+import com.jme3.app.state.AppStateManager;
 import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.screen.Screen;
 import de.lessvoid.nifty.screen.ScreenController;
+import mygame.AppStates.GamePlayAppStates;
 
 /**
  *
@@ -15,9 +17,11 @@ import de.lessvoid.nifty.screen.ScreenController;
 public class CreateCharacterScreenController implements ScreenController {
 
     private Nifty nifty;
+    private AppStateManager stateManager;
     
     public void valid() {
-        
+        GamePlayAppStates gamePlayAppStates = new GamePlayAppStates();
+        stateManager.attach(gamePlayAppStates);
     }
     
     public void back() {
