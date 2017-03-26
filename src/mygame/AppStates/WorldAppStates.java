@@ -126,7 +126,7 @@ public class WorldAppStates extends AbstractAppState {
         mat_terrain.setFloat("Tex3Scale", 128f);
 
         AbstractHeightMap heightmap = null;
-        Texture heightMapImage = assetManager.loadTexture("Textures/Heightmap.png");
+        Texture heightMapImage = assetManager.loadTexture("Textures/HeightmapArene.png");
         heightmap = new ImageBasedHeightMap(heightMapImage.getImage());
         heightmap.load();
 
