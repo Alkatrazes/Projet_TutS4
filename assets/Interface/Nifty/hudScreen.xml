@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nifty xmlns="http://nifty-gui.sourceforge.net/nifty-1.3.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://nifty-gui.sourceforge.net/nifty-1.3.xsd http://nifty-gui.sourceforge.net/nifty-1.3.xsd">
+    <!-- +++++++++++++++++++++++++++++++++++++++ -->
+    <!-- start screen -->
+    <!-- +++++++++++++++++++++++++++++++++++++++ -->
+    <useStyles filename="nifty-default-styles.xml"/>
+    <useControls filename="nifty-default-controls.xml"/>
+    
+    <screen id="hud" controller="mygame.controls.screen.HudScreenController.">
+        <layer childLayout="horizontal" id="layerVie">
+            <panel width="100%" height="20%" align="right" valign="bottom" childLayout="horizontal" visibleToMouse="true">
+                <text id="txtLvl" font="Interface/Fonts/ShowcardGothic.fnt" color="#000000" text="" align="left" textSize="20" valign="center"/>
+                <text id="txtName" font="Interface/Fonts/ShowcardGothic.fnt" color="#000000" text="" align="left" textSize="20" valign="center"/>
+                <text id="txtLife" font="Interface/Fonts/ShowcardGothic.fnt" color="#000000" text="0/0" align="left" textSize="20" valign="center"/>
+            </panel>
+        </layer>
+    </screen>
+</nifty>
