@@ -33,6 +33,13 @@ public class HudScreenController implements ScreenController {
         textRendererName.setText("Nom : "+ nom);
     }
     
+    public void updateLife(int vie,int vieMax){
+        Screen screen = nifty.getScreen("hud");
+        Element txtLife = screen.findElementByName("txtLife");
+        TextRenderer textRendererLife = txtLife.getRenderer(TextRenderer.class);
+        textRendererLife.setText("Vie : "+ vie +"/"+ vieMax);
+    }
+    
     public void bind(Nifty nifty, Screen screen) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
