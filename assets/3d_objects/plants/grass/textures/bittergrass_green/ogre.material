@@ -1,0 +1,81 @@
+import * from "resources/ogre/scripts/materials/base.material"
+
+material /global/plants/grass/bittergrass_green : /base/normalmap/specular/nonculled/alpharejected
+{
+    set_texture_alias DiffuseMap 3d_objects/plants/grass/textures/bittergrass_green/D.png
+    set_texture_alias NormalHeightMap 3d_objects/plants/grass/textures/bittergrass_green/N.png
+    set_texture_alias SpecularMap 3d_objects/plants/grass/textures/bittergrass_green/S.png
+    set $alpha_reject "greater_equal 128"
+    set $tex_address_mode "clamp"
+    
+	technique NormalMapped
+	{
+		pass Main
+		{
+			vertex_program_ref Lighting/OffsetMapping/Wave/ShadowVp
+			{
+			}
+		}
+	}
+
+	// Light version of offset mapping
+	technique NormalMappedSimple
+	{
+		pass Main
+		{
+			vertex_program_ref Lighting/Wave/OffsetMappingVp
+			{
+			}
+		}
+	}
+
+	// Non-normal mapped technique in distance
+	technique GeneralDistance
+	{
+		pass Main
+		{
+			vertex_program_ref Lighting/Wave/ShadowVp
+			{
+			}
+		}
+	}
+
+	// Light version of non-normal mapped technique
+	technique GeneralDistanceSimple
+	{
+		pass Main
+		{
+			vertex_program_ref Lighting/Wave/SimpleVp
+			{
+			}
+		}
+	}
+}
+
+material /global/plants/grass/bittergrass_green/simple/wave : /base/simple/nonculled/alpharejected
+{
+    set_texture_alias DiffuseMap 3d_objects/plants/grass/textures/bittergrass_green/D.png
+    set $alpha_reject "greater_equal 128"
+    set $tex_address_mode "clamp"
+    
+	technique GeneralHigh
+	{
+		scheme High
+		pass Main
+		{
+			vertex_program_ref Lighting/Wave/ShadowVp
+			{
+			}
+		}
+	}
+	technique GeneralMedium
+	{
+		scheme Medium
+		pass Main
+		{
+			vertex_program_ref Lighting/Wave/SimpleVp
+			{
+			}
+		}
+	}
+}

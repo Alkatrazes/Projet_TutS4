@@ -1,0 +1,8 @@
+import * from "resources/ogre/scripts/materials/base.material"
+
+material /global/structures/tent_red : /base/normalmap/specular/nonculled/alpharejected
+{
+    set_texture_alias DiffuseMap 3d_objects/structures/textures/tent_red/D.png
+    set_texture_alias NormalHeightMap 3d_objects/structures/textures/tent_red/N.png
+    set_texture_alias SpecularMap 3d_objects/structures/textures/tent_red/S.png
+}

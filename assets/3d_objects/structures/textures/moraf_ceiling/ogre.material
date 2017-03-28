@@ -1,0 +1,8 @@
+import * from "resources/ogre/scripts/materials/base.material"
+
+material /global/structures/moraf_ceiling : /base/normalmap/specular
+{
+    set_texture_alias DiffuseMap 3d_objects/structures/textures/moraf_ceiling/D.png
+    set_texture_alias NormalHeightMap 3d_objects/structures/textures/moraf_ceiling/N.png
+    set_texture_alias SpecularMap 3d_objects/structures/textures/moraf_ceiling/S.png
+}

@@ -1,0 +1,8 @@
+import * from "resources/ogre/scripts/materials/base.material"
+
+material /global/structures/stone_palisade : /base/normalmap/specular
+{
+    set_texture_alias DiffuseMap 3d_objects/structures/textures/stone_palisade/D.png
+    set_texture_alias NormalHeightMap 3d_objects/structures/textures/stone_palisade/N.png
+    set_texture_alias SpecularMap 3d_objects/structures/textures/stone_palisade/S.png
+}

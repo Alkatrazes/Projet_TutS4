@@ -1,0 +1,8 @@
+import * from "resources/ogre/scripts/materials/base.material"
+
+material /global/plants/trees/branches_birch_bare : /base/normalmap/specular/nonculled/alpharejected
+{
+    set_texture_alias DiffuseMap 3d_objects/plants/trees/textures/branches_birch_bare/D.png
+    set_texture_alias NormalHeightMap 3d_objects/plants/trees/textures/branches_birch_bare/N.png
+    set_texture_alias SpecularMap 3d_objects/plants/trees/textures/branches_birch_bare/S.png
+}

@@ -1,0 +1,144 @@
+<skeleton>
+    <bones>
+        <bone id="0" name="bone1">
+            <position x="0.0777927" y="0" z="0" />
+            <rotation angle="1.87566">
+                <axis x="0" y="0" z="1" />
+            </rotation>
+        </bone>
+        <bone id="1" name="bone">
+            <position x="0" y="0" z="0" />
+            <rotation angle="3.14159">
+                <axis x="0" y="-2.22045e-16" z="-1" />
+            </rotation>
+        </bone>
+        <bone id="2" name="root">
+            <position x="0.0108049" y="1.81899e-12" z="0.075923" />
+            <rotation angle="1.5708">
+                <axis x="-1" y="0" z="0" />
+            </rotation>
+        </bone>
+    </bones>
+    <bonehierarchy>
+        <boneparent bone="bone1" parent="bone" />
+        <boneparent bone="bone" parent="root" />
+    </bonehierarchy>
+    <animations>
+        <animation name="Close" length="0.689655">
+            <tracks>
+                <track bone="bone1">
+                    <keyframes>
+                        <keyframe time="0">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="0">
+                                <axis x="0" y="0" z="-1" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.172414">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="0.277027">
+                                <axis x="0" y="0" z="-1" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.344828">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="0.936836">
+                                <axis x="0" y="0" z="-1" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.517241">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="1.59664">
+                                <axis x="-0" y="-0" z="-1" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.689655">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="1.87367">
+                                <axis x="-0" y="-0" z="-1" />
+                            </rotate>
+                        </keyframe>
+                    </keyframes>
+                </track>
+            </tracks>
+        </animation>
+        <animation name="CloseHold" length="0.172414">
+            <tracks>
+                <track bone="bone1">
+                    <keyframes>
+                        <keyframe time="0">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="1.87367">
+                                <axis x="-0" y="-0" z="-1" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.172414">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="1.87367">
+                                <axis x="-0" y="-0" z="-1" />
+                            </rotate>
+                        </keyframe>
+                    </keyframes>
+                </track>
+            </tracks>
+        </animation>
+        <animation name="Open" length="0.655172">
+            <tracks>
+                <track bone="bone1">
+                    <keyframes>
+                        <keyframe time="0">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="1.87367">
+                                <axis x="-0" y="-0" z="-1" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.172414">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="1.54278">
+                                <axis x="0" y="0" z="-1" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.344828">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="0.830681">
+                                <axis x="0" y="0" z="-1" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.517241">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="0.19397">
+                                <axis x="-4.62211e-16" y="-3.3911e-16" z="-1" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.655172">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="0">
+                                <axis x="0" y="0" z="-1" />
+                            </rotate>
+                        </keyframe>
+                    </keyframes>
+                </track>
+            </tracks>
+        </animation>
+        <animation name="OpenHold" length="0.172414">
+            <tracks>
+                <track bone="bone1">
+                    <keyframes>
+                        <keyframe time="0">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="0">
+                                <axis x="0" y="0" z="-1" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.172414">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="0">
+                                <axis x="0" y="0" z="-1" />
+                            </rotate>
+                        </keyframe>
+                    </keyframes>
+                </track>
+            </tracks>
+        </animation>
+    </animations>
+</skeleton>

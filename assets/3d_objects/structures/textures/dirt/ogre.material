@@ -1,0 +1,7 @@
+import * from "resources/ogre/scripts/materials/base.material"
+
+material /global/structures/dirt : /base/normalmap
+{
+    set_texture_alias DiffuseMap 3d_objects/structures/textures/dirt/D.png
+    set_texture_alias NormalHeightMap 3d_objects/structures/textures/dirt/N.png
+}

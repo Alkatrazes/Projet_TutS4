@@ -1,0 +1,14 @@
+import * from "resources/ogre/scripts/materials/base.material"
+
+material /global/plants/fruit/carrot/fruit : /base/normalmap/specular
+{
+    set_texture_alias DiffuseMap 3d_objects/plants/fruit/textures/carrot/D.png
+    set_texture_alias NormalHeightMap 3d_objects/plants/fruit/textures/carrot/N.png
+    set_texture_alias SpecularMap 3d_objects/plants/fruit/textures/carrot/S.png
+}
+material /global/plants/fruit/carrot/leaves : /base/normalmap/specular/nonculled/alpharejected
+{
+    set_texture_alias DiffuseMap 3d_objects/plants/fruit/textures/carrot/D.png
+    set_texture_alias NormalHeightMap 3d_objects/plants/fruit/textures/carrot/N.png
+    set_texture_alias SpecularMap 3d_objects/plants/fruit/textures/carrot/S.png
+}

@@ -1,0 +1,402 @@
+<mesh>
+    <submeshes>
+        <submesh material="/global/plants/trees/gnarly" usesharedvertices="false" use32bitindexes="false" operationtype="triangle_list">
+            <faces count="5">
+                <face v1="0" v2="1" v3="2" />
+                <face v1="0" v2="3" v3="1" />
+                <face v1="0" v2="4" v3="5" />
+                <face v1="5" v2="4" v3="6" />
+                <face v1="0" v2="2" v3="4" />
+            </faces>
+            <geometry vertexcount="7">
+                <vertexbuffer positions="true" normals="true" texture_coord_dimensions_0="2" tangents="true" texture_coords="1">
+                    <vertex>
+                        <position x="-0.255361" y="0" z="-0.100825" />
+                        <normal x="0" y="-1" z="0" />
+                        <texcoord u="0.00171348" v="0.0199825" />
+                        <tangent x="1" y="0" z="1.00765e-07" />
+                    </vertex>
+                    <vertex>
+                        <position x="0.143724" y="0" z="-0.181681" />
+                        <normal x="0" y="-1" z="0" />
+                        <texcoord u="0.0487644" v="0.0095126" />
+                        <tangent x="1" y="0" z="8.40225e-07" />
+                    </vertex>
+                    <vertex>
+                        <position x="0.24229" y="0" z="0" />
+                        <normal x="0" y="-1" z="0" />
+                        <texcoord u="0.0603851" v="0.0330381" />
+                        <tangent x="1" y="0" z="3.74964e-07" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0.0777514" y="0" z="-0.226553" />
+                        <normal x="0" y="-1" z="0" />
+                        <texcoord u="0.0226531" v="0.00370228" />
+                        <tangent x="1" y="0" z="1.28862e-06" />
+                    </vertex>
+                    <vertex>
+                        <position x="0.143724" y="0" z="0.181681" />
+                        <normal x="0" y="-1" z="0" />
+                        <texcoord u="0.0487644" v="0.0565636" />
+                        <tangent x="1" y="0" z="-1.0871e-06" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0.255361" y="0" z="0.100826" />
+                        <normal x="0" y="-1" z="0" />
+                        <texcoord u="0.00171348" v="0.0460938" />
+                        <tangent x="1" y="0" z="-1.80969e-06" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0.0777514" y="0" z="0.226553" />
+                        <normal x="0" y="-1" z="0" />
+                        <texcoord u="0.0226531" v="0.0623739" />
+                        <tangent x="1" y="0" z="-1.98389e-06" />
+                    </vertex>
+                </vertexbuffer>
+            </geometry>
+        </submesh>
+        <submesh material="/global/plants/trees/gnarly" usesharedvertices="false" use32bitindexes="false" operationtype="triangle_list">
+            <faces count="28">
+                <face v1="0" v2="1" v3="2" />
+                <face v1="0" v2="3" v3="1" />
+                <face v1="4" v2="5" v3="6" />
+                <face v1="4" v2="7" v3="8" />
+                <face v1="7" v2="9" v3="8" />
+                <face v1="7" v2="10" v3="9" />
+                <face v1="11" v2="12" v3="13" />
+                <face v1="11" v2="14" v3="12" />
+                <face v1="14" v2="15" v3="12" />
+                <face v1="14" v2="16" v3="15" />
+                <face v1="16" v2="17" v3="15" />
+                <face v1="16" v2="18" v3="17" />
+                <face v1="19" v2="2" v3="20" />
+                <face v1="19" v2="0" v3="2" />
+                <face v1="21" v2="22" v3="23" />
+                <face v1="22" v2="24" v3="25" />
+                <face v1="26" v2="27" v3="28" />
+                <face v1="26" v2="29" v3="27" />
+                <face v1="29" v2="30" v3="27" />
+                <face v1="29" v2="31" v3="30" />
+                <face v1="32" v2="33" v3="34" />
+                <face v1="32" v2="35" v3="33" />
+                <face v1="35" v2="36" v3="33" />
+                <face v1="35" v2="37" v3="36" />
+                <face v1="37" v2="38" v3="36" />
+                <face v1="37" v2="39" v3="38" />
+                <face v1="21" v2="23" v3="40" />
+                <face v1="41" v2="22" v3="25" />
+            </faces>
+            <geometry vertexcount="42">
+                <vertexbuffer positions="true" normals="true" texture_coord_dimensions_0="2" tangents="true" texture_coords="1">
+                    <vertex>
+                        <position x="0.24229" y="0" z="0" />
+                        <normal x="0.986981" y="0.0283862" z="-0.158315" />
+                        <texcoord u="0.0627921" v="0.811003" />
+                        <tangent x="-0.158379" y="-8.6833e-07" z="-0.987378" />
+                    </vertex>
+                    <vertex>
+                        <position x="0.131012" y="0.982924" z="-0.167563" />
+                        <normal x="0.620168" y="0.0141277" z="-0.784342" />
+                        <texcoord u="0.118289" v="0.687669" />
+                        <tangent x="-0.784346" y="-0.00652406" z="-0.620289" />
+                    </vertex>
+                    <vertex>
+                        <position x="0.210126" y="0.982924" z="0" />
+                        <normal x="0.999842" y="0.015877" z="0.00794963" />
+                        <texcoord u="0.0628049" v="0.687669" />
+                        <tangent x="0.00799339" y="-0.00268682" z="-0.999964" />
+                    </vertex>
+                    <vertex>
+                        <position x="0.143724" y="0" z="-0.181681" />
+                        <normal x="0.472709" y="0.016829" z="-0.881058" />
+                        <texcoord u="0.118257" v="0.811003" />
+                        <tangent x="-0.881041" y="-0.0110543" z="-0.472911" />
+                    </vertex>
+                    <vertex>
+                        <position x="0.143724" y="0" z="-0.181681" />
+                        <normal x="0.472709" y="0.016829" z="-0.881058" />
+                        <texcoord u="0.00435569" v="0.811003" />
+                        <tangent x="-0.881211" y="0.00480439" z="-0.472699" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0.0467575" y="0.982924" z="-0.208947" />
+                        <normal x="-0.228199" y="0.0136779" z="-0.973518" />
+                        <texcoord u="0.0627963" v="0.687669" />
+                        <tangent x="-0.973608" y="-0.00675847" z="0.228125" />
+                    </vertex>
+                    <vertex>
+                        <position x="0.131012" y="0.982924" z="-0.167563" />
+                        <normal x="0.620168" y="0.0141277" z="-0.784342" />
+                        <texcoord u="0.00436801" v="0.687669" />
+                        <tangent x="-0.784461" y="0.00665557" z="-0.620142" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0.0777514" y="0" z="-0.226553" />
+                        <normal x="-0.365253" y="0.0326962" z="-0.930334" />
+                        <texcoord u="0.0627921" v="0.811003" />
+                        <tangent x="-0.930832" y="4.54575e-06" z="0.365449" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0.0467575" y="0.982924" z="-0.208947" />
+                        <normal x="-0.228199" y="0.0136779" z="-0.973518" />
+                        <texcoord u="0.0628049" v="0.687669" />
+                        <tangent x="-0.973609" y="0.000153531" z="0.228223" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0.189317" y="0.982924" z="-0.0929902" />
+                        <normal x="-0.897869" y="0.0288946" z="-0.439314" />
+                        <texcoord u="0.118287" v="0.687669" />
+                        <tangent x="-0.439828" y="-0.0145367" z="0.897964" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0.255361" y="0" z="-0.100825" />
+                        <normal x="-0.951172" y="0.066313" z="-0.301454" />
+                        <texcoord u="0.118254" v="0.811003" />
+                        <tangent x="-0.304908" y="-0.0500165" z="0.951068" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0.255361" y="0" z="-0.100825" />
+                        <normal x="-0.951172" y="0.066313" z="-0.301454" />
+                        <texcoord u="0.00435707" v="0.811029" />
+                        <tangent x="-0.300724" y="0.0209655" z="0.953481" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0.189317" y="0.982924" z="0.0929903" />
+                        <normal x="-0.901673" y="0.0356927" z="0.430944" />
+                        <texcoord u="0.041212" v="0.687706" />
+                        <tangent x="0.431027" y="-0.00572384" z="0.902321" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0.189317" y="0.982924" z="-0.0929902" />
+                        <normal x="-0.897869" y="0.0288946" z="-0.439314" />
+                        <texcoord u="0.00436939" v="0.687706" />
+                        <tangent x="-0.439087" y="0.0141302" z="0.898334" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0.255361" y="0" z="0.100826" />
+                        <normal x="-0.809863" y="0.0544875" z="0.584083" />
+                        <texcoord u="0.0411585" v="0.811029" />
+                        <tangent x="0.584951" y="-1.67134e-05" z="0.811068" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0.0467575" y="0.982924" z="0.208947" />
+                        <normal x="-0.214671" y="0.0192257" z="0.976497" />
+                        <texcoord u="0.0829729" v="0.687706" />
+                        <tangent x="0.976662" y="-0.00288817" z="0.214764" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0.0777514" y="0" z="0.226553" />
+                        <normal x="-0.0548572" y="0.021539" z="0.998262" />
+                        <texcoord u="0.0829544" v="0.811029" />
+                        <tangent x="0.998493" y="-1.89634e-06" z="0.05487" />
+                    </vertex>
+                    <vertex>
+                        <position x="0.131012" y="0.982924" z="0.167563" />
+                        <normal x="0.623411" y="0.0102715" z="0.781827" />
+                        <texcoord u="0.118264" v="0.687706" />
+                        <tangent x="0.781891" y="-0.00507379" z="-0.623395" />
+                    </vertex>
+                    <vertex>
+                        <position x="0.143724" y="0" z="0.181681" />
+                        <normal x="0.724572" y="0.0231195" z="0.688812" />
+                        <texcoord u="0.118253" v="0.811029" />
+                        <tangent x="0.689176" y="-0.0161796" z="-0.724413" />
+                    </vertex>
+                    <vertex>
+                        <position x="0.143724" y="0" z="0.181681" />
+                        <normal x="0.724572" y="0.0231195" z="0.688812" />
+                        <texcoord u="0.00435288" v="0.811003" />
+                        <tangent x="0.688864" y="0.00692235" z="-0.724858" />
+                    </vertex>
+                    <vertex>
+                        <position x="0.131012" y="0.982924" z="0.167563" />
+                        <normal x="0.623411" y="0.0102715" z="0.781827" />
+                        <texcoord u="0.0043652" v="0.687669" />
+                        <tangent x="0.781826" y="0.00504442" z="-0.623476" />
+                    </vertex>
+                    <vertex>
+                        <position x="0.131012" y="0.982924" z="0.167563" />
+                        <normal x="0.623411" y="0.0102715" z="0.781827" />
+                        <texcoord u="0.0043427" v="0.810883" />
+                        <tangent x="0.78181" y="0.00652437" z="-0.623483" />
+                    </vertex>
+                    <vertex>
+                        <position x="0.210126" y="0.982924" z="0" />
+                        <normal x="0.999842" y="0.015877" z="0.00794963" />
+                        <texcoord u="0.0627875" v="0.810912" />
+                        <tangent x="0.00804085" y="-0.00566828" z="-0.999952" />
+                    </vertex>
+                    <vertex>
+                        <position x="0.2" y="4" z="0" />
+                        <normal x="0.987776" y="0.0034875" z="0.155839" />
+                        <texcoord u="0.062803" v="0.499752" />
+                        <tangent x="0.155839" y="0.000399254" z="-0.987782" />
+                    </vertex>
+                    <vertex>
+                        <position x="0.131012" y="0.982924" z="-0.167563" />
+                        <normal x="0.620168" y="0.0141277" z="-0.784342" />
+                        <texcoord u="0.118245" v="0.810912" />
+                        <tangent x="-0.78434" y="-0.00701002" z="-0.620292" />
+                    </vertex>
+                    <vertex>
+                        <position x="0.124698" y="4" z="-0.156366" />
+                        <normal x="0.741327" y="0.00386951" z="-0.671133" />
+                        <texcoord u="0.118266" v="0.49973" />
+                        <tangent x="-0.671132" y="-0.0017411" z="-0.741336" />
+                    </vertex>
+                    <vertex>
+                        <position x="0.131012" y="0.982924" z="-0.167563" />
+                        <normal x="0.620168" y="0.0141277" z="-0.784342" />
+                        <texcoord u="0.00433919" v="0.810912" />
+                        <tangent x="-0.784461" y="0.00669301" z="-0.620142" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0.0445042" y="4" z="-0.194986" />
+                        <normal x="-0.0636747" y="0.00456999" z="-0.99796" />
+                        <texcoord u="0.062796" v="0.49973" />
+                        <tangent x="-0.997971" y="6.79363e-08" z="0.0636754" />
+                    </vertex>
+                    <vertex>
+                        <position x="0.124698" y="4" z="-0.156366" />
+                        <normal x="0.741327" y="0.00386951" z="-0.671133" />
+                        <texcoord u="0.00436383" v="0.49973" />
+                        <tangent x="-0.671143" y="0.0027083" z="-0.741323" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0.0467575" y="0.982924" z="-0.208947" />
+                        <normal x="-0.228199" y="0.0136779" z="-0.973518" />
+                        <texcoord u="0.062796" v="0.810912" />
+                        <tangent x="-0.973601" y="0.00214269" z="0.228249" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0.180194" y="4" z="-0.0867768" />
+                        <normal x="-0.822732" y="0.00387315" z="-0.568416" />
+                        <texcoord u="0.118264" v="0.49973" />
+                        <tangent x="-0.568424" y="-0.00114809" z="0.822735" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0.189317" y="0.982924" z="-0.0929902" />
+                        <normal x="-0.897869" y="0.0288946" z="-0.439314" />
+                        <texcoord u="0.118264" v="0.810912" />
+                        <tangent x="-0.439805" y="-0.0133466" z="0.897994" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0.189317" y="0.982924" z="-0.0929902" />
+                        <normal x="-0.897869" y="0.0288946" z="-0.439314" />
+                        <texcoord u="0.00434059" v="0.810928" />
+                        <tangent x="-0.439087" y="0.0141304" z="0.898334" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0.180194" y="4" z="0.0867767" />
+                        <normal x="-0.958343" y="0.00348622" z="0.285598" />
+                        <texcoord u="0.0411995" v="0.499798" />
+                        <tangent x="0.2856" y="-8.54862e-09" z="0.958349" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0.180194" y="4" z="-0.0867768" />
+                        <normal x="-0.822732" y="0.00387315" z="-0.568416" />
+                        <texcoord u="0.00436523" v="0.499798" />
+                        <tangent x="-0.56841" y="0.00267587" z="0.822741" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0.189317" y="0.982924" z="0.0929903" />
+                        <normal x="-0.901673" y="0.0356927" z="0.430944" />
+                        <texcoord u="0.0410923" v="0.810928" />
+                        <tangent x="0.431395" y="0.00571024" z="0.902145" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0.0445042" y="4" z="0.194986" />
+                        <normal x="-0.377358" y="0.00435221" z="0.926057" />
+                        <texcoord u="0.0829682" v="0.499798" />
+                        <tangent x="0.926066" y="-3.59641e-10" z="0.377362" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0.0467575" y="0.982924" z="0.208947" />
+                        <normal x="-0.214671" y="0.0192257" z="0.976497" />
+                        <texcoord u="0.0829312" v="0.810928" />
+                        <tangent x="0.976686" y="0.00290096" z="0.214655" />
+                    </vertex>
+                    <vertex>
+                        <position x="0.124698" y="4" z="0.156366" />
+                        <normal x="0.493006" y="0.00435591" z="0.870015" />
+                        <texcoord u="0.118263" v="0.499798" />
+                        <tangent x="0.870025" y="-0.00129503" z="-0.493005" />
+                    </vertex>
+                    <vertex>
+                        <position x="0.131012" y="0.982924" z="0.167563" />
+                        <normal x="0.623411" y="0.0102715" z="0.781827" />
+                        <texcoord u="0.118241" v="0.810928" />
+                        <tangent x="0.78189" y="-0.00489085" z="-0.623397" />
+                    </vertex>
+                    <vertex>
+                        <position x="0.124698" y="4" z="0.156366" />
+                        <normal x="0.493006" y="0.00435591" z="0.870015" />
+                        <texcoord u="0.00436099" v="0.49973" />
+                        <tangent x="0.870005" y="0.00451945" z="-0.493023" />
+                    </vertex>
+                    <vertex>
+                        <position x="0.2" y="4" z="0" />
+                        <normal x="0.987776" y="0.0034875" z="0.155839" />
+                        <texcoord u="0.0628029" v="0.49975" />
+                        <tangent x="0.155836" y="0.00105445" z="-0.987782" />
+                    </vertex>
+                </vertexbuffer>
+            </geometry>
+        </submesh>
+        <submesh material="/global/plants/trees/gnarly" usesharedvertices="false" use32bitindexes="false" operationtype="triangle_list">
+            <faces count="5">
+                <face v1="0" v2="1" v3="2" />
+                <face v1="3" v2="1" v3="0" />
+                <face v1="3" v2="0" v3="4" />
+                <face v1="5" v2="4" v3="6" />
+                <face v1="3" v2="4" v3="5" />
+            </faces>
+            <geometry vertexcount="7">
+                <vertexbuffer positions="true" normals="true" texture_coord_dimensions_0="2" tangents="true" texture_coords="1">
+                    <vertex>
+                        <position x="-0.180194" y="4" z="-0.0867768" />
+                        <normal x="0" y="1" z="0" />
+                        <texcoord u="0.00237849" v="0.0204877" />
+                        <tangent x="1" y="0" z="1.08221e-06" />
+                    </vertex>
+                    <vertex>
+                        <position x="0.124698" y="4" z="-0.156366" />
+                        <normal x="0" y="1" z="0" />
+                        <texcoord u="0.048684" v="0.0102152" />
+                        <tangent x="1" y="0" z="1.11158e-06" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0.0445042" y="4" z="-0.194986" />
+                        <normal x="0" y="1" z="0" />
+                        <texcoord u="0.0229864" v="0.00451434" />
+                        <tangent x="1" y="0" z="1.61339e-06" />
+                    </vertex>
+                    <vertex>
+                        <position x="0.2" y="4" z="0" />
+                        <normal x="0" y="1" z="0" />
+                        <texcoord u="0.0601205" v="0.0332973" />
+                        <tangent x="1" y="0" z="7.38712e-07" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0.180194" y="4" z="0.0867767" />
+                        <normal x="0" y="1" z="0" />
+                        <texcoord u="0.00237849" v="0.046107" />
+                        <tangent x="1" y="0" z="3.05743e-07" />
+                    </vertex>
+                    <vertex>
+                        <position x="0.124698" y="4" z="0.156366" />
+                        <normal x="0" y="1" z="0" />
+                        <texcoord u="0.048684" v="0.0563795" />
+                        <tangent x="1" y="0" z="-5.31226e-08" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0.0445042" y="4" z="0.194986" />
+                        <normal x="0" y="1" z="0" />
+                        <texcoord u="0.0229863" v="0.0620804" />
+                        <tangent x="1" y="0" z="-6.8914e-07" />
+                    </vertex>
+                </vertexbuffer>
+            </geometry>
+        </submesh>
+    </submeshes>
+</mesh>

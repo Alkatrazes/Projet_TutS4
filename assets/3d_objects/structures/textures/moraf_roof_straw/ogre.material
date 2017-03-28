@@ -1,0 +1,7 @@
+import * from "resources/ogre/scripts/materials/base.material"
+
+material /global/structures/moraf_roof_straw : /base/normalmap
+{
+    set_texture_alias DiffuseMap 3d_objects/structures/textures/moraf_roof_straw/D.png
+    set_texture_alias NormalHeightMap 3d_objects/structures/textures/moraf_roof_straw/N.png
+}

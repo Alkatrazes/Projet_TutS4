@@ -1,0 +1,7 @@
+import * from "resources/ogre/scripts/materials/base.material"
+
+material /global/structures/rezpa_stained_walls : /base/normalmap
+{
+    set_texture_alias DiffuseMap 3d_objects/structures/textures/rezpa_stained_walls/D.png
+    set_texture_alias NormalHeightMap 3d_objects/structures/textures/rezpa_stained_walls/N.png
+}

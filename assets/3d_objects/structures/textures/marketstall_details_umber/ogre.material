@@ -1,0 +1,6 @@
+import * from "resources/ogre/scripts/materials/base.material"
+
+material /global/structures/marketstall_details_umber : /base/simple/nonculled/alpharejected
+{
+    set_texture_alias DiffuseMap 3d_objects/structures/textures/marketstall_details_umber/D.png
+}

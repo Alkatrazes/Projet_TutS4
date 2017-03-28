@@ -1,0 +1,8 @@
+import * from "resources/ogre/scripts/materials/base.material"
+
+material /global/structures/curtain_wall_shale : /base/normalmap/specular
+{
+    set_texture_alias DiffuseMap 3d_objects/structures/textures/curtain_wall_shale/D.png
+    set_texture_alias NormalHeightMap 3d_objects/structures/textures/curtain_wall_shale/N.png
+    set_texture_alias SpecularMap 3d_objects/structures/textures/curtain_wall_shale/S.png
+}

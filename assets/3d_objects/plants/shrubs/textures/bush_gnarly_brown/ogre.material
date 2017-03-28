@@ -1,0 +1,9 @@
+import * from "resources/ogre/scripts/materials/base.material"
+
+material /global/plants/shrubs/bush_gnarly_brown : /base/normalmap/specular/nonculled/alpharejected
+{
+    set_texture_alias DiffuseMap 3d_objects/plants/shrubs/textures/bush_gnarly_brown/D.png
+    set_texture_alias NormalHeightMap 3d_objects/plants/shrubs/textures/bush_gnarly_brown/N.png
+    set_texture_alias SpecularMap 3d_objects/plants/shrubs/textures/bush_gnarly_brown/S.png
+    set $alpha_reject "greater_equal 200"
+}

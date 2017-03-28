@@ -1,0 +1,9 @@
+import * from "resources/ogre/scripts/materials/base.material"
+
+material /global/plants/shrubs/shrub_B : /base/normalmap/specular/nonculled/alpharejected
+{
+    set_texture_alias DiffuseMap 3d_objects/plants/shrubs/textures/shrub_B/D.png
+    set_texture_alias NormalHeightMap 3d_objects/plants/shrubs/textures/shrub_B/N.png
+    set_texture_alias SpecularMap 3d_objects/plants/shrubs/textures/shrub_B/S.png
+    set $alpha_reject "greater_equal 200"
+}

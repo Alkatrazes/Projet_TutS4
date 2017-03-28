@@ -1,0 +1,7 @@
+import * from "resources/ogre/scripts/materials/base.material"
+
+material /global/plants/trees/tree_pine_snow : /base/normalmap/nonculled/alpharejected
+{
+    set_texture_alias DiffuseMap 3d_objects/plants/trees/textures/tree_pine_snow/D.png
+    set_texture_alias NormalHeightMap 3d_objects/plants/trees/textures/tree_pine_snow/N.png
+}

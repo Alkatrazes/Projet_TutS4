@@ -1,0 +1,258 @@
+<skeleton>
+    <bones>
+        <bone id="0" name="left_shutter_bone">
+            <position x="0" y="0" z="0" />
+            <rotation angle="2.37785">
+                <axis x="-0.00376073" y="-0.999992" z="0.00151026" />
+            </rotation>
+        </bone>
+        <bone id="1" name="rightShutter">
+            <position x="0" y="0" z="0" />
+            <rotation angle="2.687">
+                <axis x="0.00376073" y="0.999992" z="0.000869846" />
+            </rotation>
+        </bone>
+        <bone id="2" name="L_shutterRT">
+            <position x="7.05272e-19" y="-0.00507344" z="0.00317626" />
+            <rotation angle="1.5708">
+                <axis x="0" y="-1" z="0" />
+            </rotation>
+        </bone>
+        <bone id="3" name="R_shutterRT">
+            <position x="1.9685e-16" y="-0.00507344" z="0.886536" />
+            <rotation angle="1.5708">
+                <axis x="0" y="1" z="0" />
+            </rotation>
+        </bone>
+        <bone id="4" name="shutter">
+            <position x="0" y="0" z="0" />
+            <rotation angle="1.5708">
+                <axis x="0" y="1" z="0" />
+            </rotation>
+        </bone>
+    </bones>
+    <bonehierarchy>
+        <boneparent bone="left_shutter_bone" parent="L_shutterRT" />
+        <boneparent bone="rightShutter" parent="R_shutterRT" />
+        <boneparent bone="L_shutterRT" parent="shutter" />
+        <boneparent bone="R_shutterRT" parent="shutter" />
+    </bonehierarchy>
+    <animations>
+        <animation name="shutters_0pen" length="0.655172">
+            <tracks>
+                <track bone="left_shutter_bone">
+                    <keyframes>
+                        <keyframe time="0">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="2.37785">
+                                <axis x="0.00752141" y="0.999972" z="2.51818e-18" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.172414">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="2.05772">
+                                <axis x="0.00696004" y="0.999974" z="-0.00209339" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.344828">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="1.1939">
+                                <axis x="0.00517334" y="0.999962" z="-0.00706496" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.517241">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="0.326578">
+                                <axis x="0.00305762" y="0.999932" z="-0.011255" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.655172">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="0.0137761">
+                                <axis x="0.00222504" y="0.999918" z="-0.0125929" />
+                            </rotate>
+                        </keyframe>
+                    </keyframes>
+                </track>
+                <track bone="rightShutter">
+                    <keyframes>
+                        <keyframe time="0">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="2.68699">
+                                <axis x="-0.00752141" y="-0.999972" z="2.28447e-19" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.172414">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="2.32524">
+                                <axis x="-0.00679626" y="-0.999975" z="-0.0017378" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.344828">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="1.34911">
+                                <axis x="-0.00462136" y="-0.999974" z="-0.00548376" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.517241">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="0.369034">
+                                <axis x="-0.00219561" y="-0.999964" z="-0.00819791" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.655172">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="0.0155639">
+                                <axis x="-0.00127039" y="-0.999959" z="-0.00895899" />
+                            </rotate>
+                        </keyframe>
+                    </keyframes>
+                </track>
+            </tracks>
+        </animation>
+        <animation name="shutters_close" length="0.655172">
+            <tracks>
+                <track bone="left_shutter_bone">
+                    <keyframes>
+                        <keyframe time="0">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="0">
+                                <axis x="4.44089e-17" y="-5.68434e-15" z="-1" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.172414">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="0.320145">
+                                <axis x="0.00304086" y="0.999932" z="-0.0112834" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.344828">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="1.18399">
+                                <axis x="0.00515086" y="0.999961" z="-0.00711703" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.517241">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="2.05129">
+                                <axis x="0.00694813" y="0.999974" z="-0.0021339" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.655172">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="2.36407">
+                                <axis x="0.00749858" y="0.999972" z="-9.337e-05" />
+                            </rotate>
+                        </keyframe>
+                    </keyframes>
+                </track>
+                <track bone="rightShutter">
+                    <keyframes>
+                        <keyframe time="0">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="0">
+                                <axis x="0.00390562" y="0.999838" z="-0.0175753" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.172414">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="0.361765">
+                                <axis x="-0.00217684" y="-0.999964" z="-0.00821468" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.344828">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="1.33792">
+                                <axis x="-0.00459489" y="-0.999974" z="-0.00552013" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.517241">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="2.31798">
+                                <axis x="-0.00678116" y="-0.999975" z="-0.00177047" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.655172">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="2.67143">
+                                <axis x="-0.00749132" y="-0.999972" z="-7.95996e-05" />
+                            </rotate>
+                        </keyframe>
+                    </keyframes>
+                </track>
+            </tracks>
+        </animation>
+        <animation name="shutters_close_POSE" length="0.103448">
+            <tracks>
+                <track bone="left_shutter_bone">
+                    <keyframes>
+                        <keyframe time="0">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="2.37785">
+                                <axis x="0.00752141" y="0.999972" z="2.51818e-18" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.103448">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="2.37785">
+                                <axis x="0.00752141" y="0.999972" z="2.51818e-18" />
+                            </rotate>
+                        </keyframe>
+                    </keyframes>
+                </track>
+                <track bone="rightShutter">
+                    <keyframes>
+                        <keyframe time="0">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="2.68699">
+                                <axis x="-0.00752141" y="-0.999972" z="2.28447e-19" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.103448">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="2.68699">
+                                <axis x="-0.00752141" y="-0.999972" z="2.28447e-19" />
+                            </rotate>
+                        </keyframe>
+                    </keyframes>
+                </track>
+            </tracks>
+        </animation>
+        <animation name="shutters_open_POSE" length="0.103448">
+            <tracks>
+                <track bone="left_shutter_bone">
+                    <keyframes>
+                        <keyframe time="0">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="0">
+                                <axis x="4.44089e-17" y="-5.68434e-15" z="-1" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.103448">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="0">
+                                <axis x="4.44089e-17" y="-5.68434e-15" z="-1" />
+                            </rotate>
+                        </keyframe>
+                    </keyframes>
+                </track>
+                <track bone="rightShutter">
+                    <keyframes>
+                        <keyframe time="0">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="0">
+                                <axis x="0.00390562" y="0.999838" z="-0.0175753" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.103448">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="0">
+                                <axis x="0.00390562" y="0.999838" z="-0.0175753" />
+                            </rotate>
+                        </keyframe>
+                    </keyframes>
+                </track>
+            </tracks>
+        </animation>
+    </animations>
+</skeleton>

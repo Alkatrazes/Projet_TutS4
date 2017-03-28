@@ -1,0 +1,37 @@
+import * from "resources/ogre/scripts/materials/base.material"
+
+material /global/plants/grass/bittergrass_yellow : /base/normalmap/specular/nonculled/alpharejected
+{
+    set_texture_alias DiffuseMap 3d_objects/plants/grass/textures/bittergrass_yellow/D.png
+    set_texture_alias NormalHeightMap 3d_objects/plants/grass/textures/bittergrass_yellow/N.png
+    set_texture_alias SpecularMap 3d_objects/plants/grass/textures/bittergrass_yellow/S.png
+    set $alpha_reject "greater_equal 128"
+    set $tex_address_mode "clamp"
+}
+
+material /global/plants/grass/bittergrass_yellow/simple/wave : /base/simple/nonculled/alpharejected
+{
+    set_texture_alias DiffuseMap 3d_objects/plants/grass/textures/bittergrass_yellow/D.png
+    set $alpha_reject "greater_equal 128"
+    set $tex_address_mode "clamp"
+    technique GeneralHigh
+    {
+	    scheme High
+	    pass Main
+	    {
+		    vertex_program_ref Lighting/Wave/ShadowVp
+		    {
+		    }
+	    }
+    }
+    technique GeneralMedium
+    {
+	    scheme Medium
+	    pass Main
+	    {
+		    vertex_program_ref Lighting/Wave/SimpleVp
+		    {
+		    }
+	    }
+    }
+}

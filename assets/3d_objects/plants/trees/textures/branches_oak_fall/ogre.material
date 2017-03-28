@@ -1,0 +1,7 @@
+import * from "resources/ogre/scripts/materials/base.material"
+
+material /global/plants/trees/branches_oak_fall : /base/normalmap/nonculled/alpharejected
+{
+    set_texture_alias DiffuseMap 3d_objects/plants/trees/textures/branches_oak_fall/D.png
+    set_texture_alias NormalHeightMap 3d_objects/plants/trees/textures/branches_oak_fall/N.png
+}

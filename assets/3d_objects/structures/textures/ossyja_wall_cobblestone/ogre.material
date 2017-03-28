@@ -1,0 +1,8 @@
+import * from "resources/ogre/scripts/materials/base.material"
+
+material /global/structures/ossyja_wall_cobblestone : /base/normalmap/specular
+{
+    set_texture_alias DiffuseMap 3d_objects/structures/textures/ossyja_wall_cobblestone/D.png
+    set_texture_alias NormalHeightMap 3d_objects/structures/textures/ossyja_wall_cobblestone/N.png
+    set_texture_alias SpecularMap 3d_objects/structures/textures/ossyja_wall_cobblestone/S.png
+}

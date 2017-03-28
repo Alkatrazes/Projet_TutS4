@@ -1,0 +1,7 @@
+import * from "resources/ogre/scripts/materials/base.material"
+
+material /global/plants/trees/bark_douglas : /base/normalmap
+{
+    set_texture_alias DiffuseMap 3d_objects/plants/trees/textures/bark_douglas/D.png
+    set_texture_alias NormalHeightMap 3d_objects/plants/trees/textures/bark_douglas/N.png
+}

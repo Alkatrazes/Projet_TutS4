@@ -1,0 +1,7 @@
+import * from "resources/ogre/scripts/materials/base.material"
+
+material /global/structures/sharpened_log_birch : /base/normalmap
+{
+    set_texture_alias DiffuseMap 3d_objects/structures/textures/sharpened_log_birch/D.png
+    set_texture_alias NormalHeightMap 3d_objects/structures/textures/sharpened_log_birch/N.png
+}

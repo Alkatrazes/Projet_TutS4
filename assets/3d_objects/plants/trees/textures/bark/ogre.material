@@ -1,0 +1,8 @@
+import * from "resources/ogre/scripts/materials/base.material"
+
+material /global/plants/trees/bark : /base/normalmap/specular
+{
+    set_texture_alias DiffuseMap 3d_objects/plants/trees/textures/bark/D.png
+    set_texture_alias NormalHeightMap 3d_objects/plants/trees/textures/bark/N.png
+    set_texture_alias SpecularMap 3d_objects/plants/trees/textures/bark/S.png
+}

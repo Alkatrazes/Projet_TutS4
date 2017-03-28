@@ -1,0 +1,8 @@
+import * from "resources/ogre/scripts/materials/base.material"
+
+material /global/structures/marketstall_main_blue : /base/normalmap/specular/nonculled
+{
+    set_texture_alias DiffuseMap 3d_objects/structures/textures/marketstall_main_blue/D.png
+    set_texture_alias NormalHeightMap 3d_objects/structures/textures/marketstall_main_blue/N.png
+    set_texture_alias SpecularMap 3d_objects/structures/textures/marketstall_main_blue/S.png
+}

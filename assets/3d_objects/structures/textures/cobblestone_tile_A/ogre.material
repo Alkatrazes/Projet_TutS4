@@ -1,0 +1,8 @@
+import * from "resources/ogre/scripts/materials/base.material"
+
+material /global/structures/cobblestone_tile_A : /base/normalmap/specular
+{
+    set_texture_alias DiffuseMap 3d_objects/structures/textures/cobblestone_tile_A/D.png
+    set_texture_alias NormalHeightMap 3d_objects/structures/textures/cobblestone_tile_A/N.png
+    set_texture_alias SpecularMap 3d_objects/structures/textures/cobblestone_tile_A/S.png
+}

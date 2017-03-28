@@ -1,0 +1,8 @@
+import * from "resources/ogre/scripts/materials/base.material"
+
+material /global/structures/rezpa_arch : /base/normalmap/specular
+{
+    set_texture_alias DiffuseMap 3d_objects/structures/textures/rezpa_arch/D.png
+    set_texture_alias NormalHeightMap 3d_objects/structures/textures/rezpa_arch/N.png
+    set_texture_alias SpecularMap 3d_objects/structures/textures/rezpa_arch/S.png
+}

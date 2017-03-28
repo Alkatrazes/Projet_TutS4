@@ -1,0 +1,8 @@
+import * from "resources/ogre/scripts/materials/base.material"
+
+material /global/plants/flowers/camellia/body : /base/normalmap/specular/nonculled/alpharejected
+{
+    set_texture_alias DiffuseMap 3d_objects/plants/flowers/textures/camellia/D.png
+    set_texture_alias NormalHeightMap 3d_objects/plants/flowers/textures/camellia/N.png
+    set_texture_alias SpecularMap 3d_objects/plants/flowers/textures/camellia/S.png
+}

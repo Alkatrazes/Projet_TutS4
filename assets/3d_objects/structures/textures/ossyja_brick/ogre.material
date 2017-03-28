@@ -1,0 +1,8 @@
+import * from "resources/ogre/scripts/materials/base.material"
+
+material /global/structures/ossyja_brick : /base/normalmap/specular
+{
+    set_texture_alias DiffuseMap 3d_objects/structures/textures/ossyja_brick/D.png
+    set_texture_alias NormalHeightMap 3d_objects/structures/textures/ossyja_brick/N.png
+    set_texture_alias SpecularMap 3d_objects/structures/textures/ossyja_brick/S.png
+}

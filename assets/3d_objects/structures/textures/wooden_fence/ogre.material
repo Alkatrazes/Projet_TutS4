@@ -1,0 +1,20 @@
+import * from "resources/ogre/scripts/materials/base.material"
+
+material /global/structures/wooden_fence/end : /base/normalmap/specular
+{
+    set_texture_alias DiffuseMap 3d_objects/structures/textures/wooden_fence/D.png
+    set_texture_alias NormalHeightMap 3d_objects/structures/textures/wooden_fence/N.png
+    set_texture_alias SpecularMap 3d_objects/structures/textures/wooden_fence/S.png
+}
+material /global/structures/wooden_fence/wood : /base/normalmap/specular
+{
+    set_texture_alias DiffuseMap 3d_objects/structures/textures/wooden_fence/D.png
+    set_texture_alias NormalHeightMap 3d_objects/structures/textures/wooden_fence/N.png
+    set_texture_alias SpecularMap 3d_objects/structures/textures/wooden_fence/S.png
+}
+material /global/structures/wooden_fence/metal : /base/normalmap/specular
+{
+    set_texture_alias DiffuseMap 3d_objects/structures/textures/wooden_fence/D.png
+    set_texture_alias NormalHeightMap 3d_objects/structures/textures/wooden_fence/N.png
+    set_texture_alias SpecularMap 3d_objects/structures/textures/wooden_fence/S.png
+}

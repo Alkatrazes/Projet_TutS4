@@ -1,0 +1,7 @@
+import * from "resources/ogre/scripts/materials/base.material"
+
+material /global/structures/wall_inner_stained : /base/simple
+{
+    set_texture_alias DiffuseMap 3d_objects/structures/textures/wall_inner_stained/D.png
+
+}

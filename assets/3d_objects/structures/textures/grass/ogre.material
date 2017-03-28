@@ -1,0 +1,6 @@
+import * from "resources/ogre/scripts/materials/base.material"
+
+material /global/structures/grass : /base/simple
+{
+    set_texture_alias DiffuseMap 3d_objects/structures/textures/grass/D.png
+}

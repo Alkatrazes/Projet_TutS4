@@ -1,0 +1,8 @@
+import * from "resources/ogre/scripts/materials/base.material"
+
+material /global/structures/sign_post : /base/normalmap/specular
+{
+    set_texture_alias DiffuseMap 3d_objects/structures/textures/sign_post/D.png
+    set_texture_alias NormalHeightMap 3d_objects/structures/textures/sign_post/N.png
+    set_texture_alias SpecularMap 3d_objects/structures/textures/sign_post/S.png
+}

@@ -1,0 +1,151 @@
+<skeleton>
+    <bones>
+        <bone id="0" name="door_bone">
+            <position x="0" y="0" z="0" />
+            <rotation angle="3.14159">
+                <axis x="0" y="0" z="-1" />
+            </rotation>
+        </bone>
+        <bone id="1" name="dooRT">
+            <position x="-0.013399" y="0.0344868" z="0" />
+            <rotation angle="0">
+                <axis x="1" y="0" z="0" />
+            </rotation>
+        </bone>
+        <bone id="2" name="door">
+            <position x="0" y="0" z="0" />
+            <rotation angle="0">
+                <axis x="1" y="0" z="0" />
+            </rotation>
+        </bone>
+        <bone id="3" name="cg_house_A">
+            <position x="0" y="0" z="0" />
+            <rotation angle="0">
+                <axis x="1" y="0" z="0" />
+            </rotation>
+        </bone>
+    </bones>
+    <bonehierarchy>
+        <boneparent bone="door_bone" parent="dooRT" />
+        <boneparent bone="dooRT" parent="door" />
+        <boneparent bone="door" parent="cg_house_A" />
+    </bonehierarchy>
+    <animations>
+        <animation name="door_close_Clip" length="0.689655">
+            <tracks>
+                <track bone="door_bone">
+                    <keyframes>
+                        <keyframe time="0">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="2.23268">
+                                <axis x="-1.14511e-32" y="-1" z="-1.14511e-32" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.172414">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="1.90365">
+                                <axis x="-0" y="-1" z="-0" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.344828">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="1.11634">
+                                <axis x="-3.42959e-33" y="-1" z="2.05776e-32" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.517241">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="0.32903">
+                                <axis x="1.43048e-32" y="-1" z="0" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.689655">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="0">
+                                <axis x="1" y="0" z="0" />
+                            </rotate>
+                        </keyframe>
+                    </keyframes>
+                </track>
+            </tracks>
+        </animation>
+        <animation name="door_close_POSE_Clip" length="0.172414">
+            <tracks>
+                <track bone="door_bone">
+                    <keyframes>
+                        <keyframe time="0">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="0">
+                                <axis x="1" y="0" z="0" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.172414">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="0">
+                                <axis x="1" y="0" z="0" />
+                            </rotate>
+                        </keyframe>
+                    </keyframes>
+                </track>
+            </tracks>
+        </animation>
+        <animation name="door_open_Clip" length="0.689655">
+            <tracks>
+                <track bone="door_bone">
+                    <keyframes>
+                        <keyframe time="0">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="0">
+                                <axis x="1" y="0" z="0" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.172414">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="0.359106">
+                                <axis x="-8.76824e-33" y="-1" z="-3.50729e-32" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.344828">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="1.15237">
+                                <axis x="0" y="-1" z="3.37243e-33" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.517241">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="1.91264">
+                                <axis x="-1.38471e-32" y="-1" z="-1.38471e-32" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.689655">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="2.23268">
+                                <axis x="-1.14511e-32" y="-1" z="-1.14511e-32" />
+                            </rotate>
+                        </keyframe>
+                    </keyframes>
+                </track>
+            </tracks>
+        </animation>
+        <animation name="door_open_POSE_Clip" length="0.172414">
+            <tracks>
+                <track bone="door_bone">
+                    <keyframes>
+                        <keyframe time="0">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="2.23268">
+                                <axis x="-1.14511e-32" y="-1" z="-1.14511e-32" />
+                            </rotate>
+                        </keyframe>
+                        <keyframe time="0.172414">
+                            <translate x="0" y="0" z="0" />
+                            <rotate angle="2.23268">
+                                <axis x="-1.14511e-32" y="-1" z="-1.14511e-32" />
+                            </rotate>
+                        </keyframe>
+                    </keyframes>
+                </track>
+            </tracks>
+        </animation>
+    </animations>
+</skeleton>

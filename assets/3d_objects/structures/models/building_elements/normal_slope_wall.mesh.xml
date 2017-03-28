@@ -1,0 +1,144 @@
+<mesh>
+    <submeshes>
+        <submesh material="/global/structures/moraf_floor" usesharedvertices="false" use32bitindexes="false" operationtype="triangle_list">
+            <faces count="2">
+                <face v1="0" v2="1" v3="2" />
+                <face v1="0" v2="2" v3="3" />
+            </faces>
+            <geometry vertexcount="4">
+                <vertexbuffer positions="true" normals="true" texture_coord_dimensions_0="2" tangents="true" texture_coords="1">
+                    <vertex>
+                        <position x="13.9969" y="-0.874809" z="0" />
+                        <normal x="0" y="0" z="1" />
+                        <texcoord u="0.9995" v="0.999499" />
+                        <tangent x="1" y="-6.21766e-08" z="0" />
+                    </vertex>
+                    <vertex>
+                        <position x="13.9969" y="0.874809" z="-0" />
+                        <normal x="0" y="0" z="1" />
+                        <texcoord u="0.9995" v="0.0005" />
+                        <tangent x="1" y="-4.99537e-10" z="0" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0" y="0.874809" z="-0" />
+                        <normal x="0" y="0" z="1" />
+                        <texcoord u="0.0005" v="0.0005" />
+                        <tangent x="1" y="-5.7652e-08" z="0" />
+                    </vertex>
+                    <vertex>
+                        <position x="0" y="-0.874809" z="0" />
+                        <normal x="0" y="0" z="1" />
+                        <texcoord u="0.0005" v="0.9995" />
+                        <tangent x="1" y="-1.19329e-07" z="0" />
+                    </vertex>
+                </vertexbuffer>
+            </geometry>
+        </submesh>
+        <submesh material="/global/structures/moraf_floor_north_south_side" usesharedvertices="false" use32bitindexes="false" operationtype="triangle_list">
+            <faces count="4">
+                <face v1="0" v2="1" v3="2" />
+                <face v1="3" v2="1" v3="0" />
+                <face v1="4" v2="5" v3="6" />
+                <face v1="7" v2="8" v3="9" />
+            </faces>
+            <geometry vertexcount="10">
+                <vertexbuffer positions="true" normals="true" texture_coord_dimensions_0="2" tangents="true" texture_coords="1">
+                    <vertex>
+                        <position x="0" y="0.87481" z="10.4977" />
+                        <normal x="-0.6" y="-0" z="-0.8" />
+                        <texcoord u="0.9995" v="0.0005" />
+                        <tangent x="-0.8" y="5.30025e-08" z="0.6" />
+                    </vertex>
+                    <vertex>
+                        <position x="13.9969" y="-0.874809" z="0" />
+                        <normal x="-0.6" y="-0" z="-0.8" />
+                        <texcoord u="0.0005" v="0.0779" />
+                        <tangent x="-0.8" y="5.37304e-08" z="0.6" />
+                    </vertex>
+                    <vertex>
+                        <position x="0" y="-0.874808" z="10.4977" />
+                        <normal x="-0.6" y="-0" z="-0.8" />
+                        <texcoord u="0.9995" v="0.0779" />
+                        <tangent x="-0.8" y="5.22252e-08" z="0.6" />
+                    </vertex>
+                    <vertex>
+                        <position x="13.9969" y="0.874809" z="-0" />
+                        <normal x="-0.6" y="-0" z="-0.8" />
+                        <texcoord u="0.000499" v="0.0005" />
+                        <tangent x="-0.8" y="5.45077e-08" z="0.6" />
+                    </vertex>
+                    <vertex>
+                        <position x="0" y="-0.874808" z="10.4977" />
+                        <normal x="0" y="1" z="-0" />
+                        <texcoord u="0.9969" v="-0.017212" />
+                        <tangent x="-1" y="0" z="0.00037357" />
+                    </vertex>
+                    <vertex>
+                        <position x="13.9969" y="-0.874809" z="0" />
+                        <normal x="0" y="1" z="-0" />
+                        <texcoord u="-7.1e-05" v="0.986046" />
+                        <tangent x="-1" y="0" z="0.00037357" />
+                    </vertex>
+                    <vertex>
+                        <position x="0" y="-0.874809" z="0" />
+                        <normal x="0" y="1" z="-0" />
+                        <texcoord u="0.9966" v="0.986546" />
+                        <tangent x="-1" y="0" z="0.00037357" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0" y="0.874809" z="-0" />
+                        <normal x="0" y="-1" z="0" />
+                        <texcoord u="0.000111" v="0.004502" />
+                        <tangent x="1" y="0" z="0.000604839" />
+                    </vertex>
+                    <vertex>
+                        <position x="13.9969" y="0.874809" z="-0" />
+                        <normal x="0" y="-1" z="0" />
+                        <texcoord u="0.9969" v="0.003702" />
+                        <tangent x="1" y="0" z="0.000604839" />
+                    </vertex>
+                    <vertex>
+                        <position x="0" y="0.87481" z="10.4977" />
+                        <normal x="0" y="-1" z="0" />
+                        <texcoord u="-7.1e-05" v="0.996503" />
+                        <tangent x="1" y="0" z="0.000604839" />
+                    </vertex>
+                </vertexbuffer>
+            </geometry>
+        </submesh>
+        <submesh material="/global/structures/moraf_stone_wall_side" usesharedvertices="false" use32bitindexes="false" operationtype="triangle_list">
+            <faces count="2">
+                <face v1="0" v2="1" v3="2" />
+                <face v1="1" v2="0" v3="3" />
+            </faces>
+            <geometry vertexcount="4">
+                <vertexbuffer positions="true" normals="true" texture_coord_dimensions_0="2" tangents="true" texture_coords="1">
+                    <vertex>
+                        <position x="0" y="-0.874809" z="0" />
+                        <normal x="1" y="0" z="-0" />
+                        <texcoord u="0.004381" v="0.641068" />
+                        <tangent x="0" y="1" z="0" />
+                    </vertex>
+                    <vertex>
+                        <position x="0" y="0.87481" z="10.4977" />
+                        <normal x="1" y="0" z="-0" />
+                        <texcoord u="0.9879" v="0.0001" />
+                        <tangent x="0" y="1" z="0" />
+                    </vertex>
+                    <vertex>
+                        <position x="0" y="-0.874808" z="10.4977" />
+                        <normal x="1" y="0" z="-0" />
+                        <texcoord u="0.004805" v="0.0001" />
+                        <tangent x="0" y="1" z="0" />
+                    </vertex>
+                    <vertex>
+                        <position x="-0" y="0.874809" z="-0" />
+                        <normal x="1" y="0" z="-0" />
+                        <texcoord u="0.9923" v="0.641068" />
+                        <tangent x="0" y="1" z="0" />
+                    </vertex>
+                </vertexbuffer>
+            </geometry>
+        </submesh>
+    </submeshes>
+</mesh>
