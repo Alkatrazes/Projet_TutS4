@@ -55,6 +55,8 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
     private BulletAppState bulletAppState;
     
     private TerrainQuad terrain;
+    private Material mat_terrain;
+
     // private GamePlayAppState gamePlayAppState;
     // private StartScreenAppState startScreenAppState;
     private AppStateManager stateManager;
@@ -98,8 +100,8 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
         this.stateManager = stateManager;
         this.listener = this.app.getListener();
         keyBindings = new keyBiding();
-        setDisplayFps(false);
-        setDisplayStatView(false);
+        this.app.setDisplayFps(false);
+        this.app.setDisplayStatView(false);
         flyCam.setMoveSpeed(100);
 
         /** 1. Create terrain material and load four textures into it. */
@@ -128,7 +130,7 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
         heightmap = new ImageBasedHeightMap(heightMapImage.getImage());
         heightmap.load();
 
-        guiNode.detachAllChildren();
+        this.app.getGuiNode().detachAllChildren();
         guiFont = assetManager.loadFont("Interface/Fonts/Default.fnt");
         BitmapText helloText = new BitmapText(guiFont, false);
         helloText.setSize(guiFont.getCharSet().getRenderedSize());
