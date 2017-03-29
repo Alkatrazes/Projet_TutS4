@@ -102,6 +102,18 @@ public class JME extends SimpleApplication implements ActionListener, InputListe
         rootNode.attachChild(arbre5);
         Spatial arbre6 = makeMaison(90f, 120f, -498.8811f, "3d_objects/plants/trees/models/treeA/treeA.mesh.xml", "Textures/Terrain/splat/grass.jpg", 0f, 0f, 0f);
         rootNode.attachChild(arbre6);
+        
+        Spatial ninja = assetManager.loadModel("Models/Ninja/Ninja.mesh.xml");
+        ninja.scale(0.05f, 0.05f, 0.05f);
+        ninja.rotate(0.0f, -40.0f, 0.0f);
+        ninja.setLocalTranslation(10f, 120f, -485.8811f);
+        rootNode.attachChild(ninja);
+        
+        Spatial orc = assetManager.loadModel("Models/Sinbad/Sinbad.mesh.xml");
+        orc.scale(0.8f, 0.8f, 0.8f);
+        orc.rotate(0.0f, 30.0f, 0.0f);
+        orc.setLocalTranslation(250f, 123.8f, -600.8811f);
+        rootNode.attachChild(orc);
 
         CapsuleCollisionShape capsuleShape = new CapsuleCollisionShape(1.5f, 6f, 1);
 
