@@ -8,6 +8,7 @@
     
     <screen id="hud" controller="mygame.controls.screen.HudScreenController.">
         <layer childLayout="horizontal" id="layerVie">
+            <image filename="Interface/Nifty/images/hud.jpg"></image>
             <panel width="100%" height="20%" align="right" valign="bottom" childLayout="horizontal" visibleToMouse="true">
                 <text id="txtLvl" font="Interface/Fonts/ShowcardGothic.fnt" color="#000000" text="" align="left" textSize="20" valign="center"/>
                 <text id="txtName" font="Interface/Fonts/ShowcardGothic.fnt" color="#000000" text="" align="left" textSize="20" valign="center"/>
