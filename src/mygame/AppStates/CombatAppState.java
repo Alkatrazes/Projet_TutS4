@@ -100,7 +100,6 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
         this.flyCam = this.app.getFlyByCamera();
         this.stateManager = stateManager;
         this.listener = this.app.getListener();
-        keyBindings = new keyBiding();
         this.app.setDisplayFps(false);
         this.app.setDisplayStatView(false);
         flyCam.setMoveSpeed(100);
@@ -166,8 +165,7 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
         flyCam.setEnabled(false);
         bulletAppState = stateManager.getState(BulletAppState.class);
         worldAppState = stateManager.getState(WorldAppState.class);                
-        initMonster();       
-        bulletAppState.getPhysicsSpace().addCollisionListener(this);
+        //initMonster();       
     }
     
     public void initMonster(){
