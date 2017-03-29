@@ -147,7 +147,7 @@ public class Test7JME3 {
 	}
 	
 
-	public static void main(String[] args) throws IOException{
+	public void combat() throws IOException{
 		// create new JME appsettings
 		AppSettings settings = new AppSettings(true);
 		settings.setResolution(1280, 800);
