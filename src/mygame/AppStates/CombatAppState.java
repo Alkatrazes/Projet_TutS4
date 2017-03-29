@@ -38,6 +38,7 @@ import de.lessvoid.nifty.elements.Element;
 import de.lessvoid.nifty.elements.render.TextRenderer;
 import de.lessvoid.nifty.screen.Screen;
 import de.lessvoid.nifty.screen.ScreenController;
+import java.awt.Font;
 import mygame.keyBiding;
 
 
@@ -131,12 +132,12 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
         heightmap.load();
 
         this.app.getGuiNode().detachAllChildren();
-        guiFont = assetManager.loadFont("Interface/Fonts/Default.fnt");
+        BitmapFont guiFont = assetManager.loadFont("Interface/Fonts/Default.fnt");
         BitmapText helloText = new BitmapText(guiFont, false);
         helloText.setSize(guiFont.getCharSet().getRenderedSize());
         helloText.setText("100/100");
         helloText.setLocalTranslation(0, 1000, 0);
-        guiNode.attachChild(helloText);
+        this.app.getGuiNode().attachChild(helloText);
 
         /** 3. We have prepared material and heightmap. 
          * Now we create the actual terrain:
@@ -159,7 +160,7 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
 
 
         /** 5. The LOD (level of detail) depends on were the camera is: */
-        TerrainLodControl control = new TerrainLodControl(terrain, getCamera());
+        TerrainLodControl control = new TerrainLodControl(terrain, this.app.getCamera());
         terrain.addControl(control);
         cam.setLocation(new Vector3f(1,0,500));
         flyCam.setEnabled(false);
