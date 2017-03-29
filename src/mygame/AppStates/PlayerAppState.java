@@ -43,6 +43,11 @@ import com.jme3.scene.Spatial;
 import com.jme3.font.BitmapText;
 import com.jme3.app.SimpleApplication;
 import com.jme3.font.BitmapFont;
+import de.lessvoid.nifty.Nifty;
+import de.lessvoid.nifty.elements.Element;
+import de.lessvoid.nifty.elements.render.TextRenderer;
+import de.lessvoid.nifty.screen.Screen;
+import de.lessvoid.nifty.screen.ScreenController;
 import mygame.keyBiding;
 
 
@@ -50,7 +55,7 @@ import mygame.keyBiding;
  *
  * @author Tanguy
  */
-public class PlayerAppState extends AbstractAppState implements PhysicsCollisionListener{
+public class PlayerAppState extends AbstractAppState implements PhysicsCollisionListener, ScreenController{
     /* AppState specific */
     private SimpleApplication app;
     private Camera cam;
@@ -62,14 +67,18 @@ public class PlayerAppState extends AbstractAppState implements PhysicsCollision
     // private StartScreenAppState startScreenAppState;
     private AppStateManager stateManager;
     private FlyByCamera flyCam;
-    private Node nodePivot, nodeBody, nodeBelts, nodeArm1, nodeArm2, nodeArm3;
+    private Node player;
     // private CustomChaseCamera chaseCam;
     private AudioNode excavatorEngineSoundPassive;
     private AudioNode excavatorEngineSoundRunning;
     private Listener listener;
     private keyBiding keyBindings;
     
+    private Nifty nifty;
+
+    
     private int playerStatus;
+    private boolean frontCollision, backCollision, rightCollision, leftCollision = false;
 
     
     
@@ -99,6 +108,7 @@ public class PlayerAppState extends AbstractAppState implements PhysicsCollision
     // Game settings
     private Node playerStart;
     private BitmapFont guiFont;
+    private WorldAppState worldAppState;
     
     @Override
     public void initialize(AppStateManager stateManager, Application app) {
@@ -114,7 +124,7 @@ public class PlayerAppState extends AbstractAppState implements PhysicsCollision
         keyBindings = new keyBiding();
         
         bulletAppState = stateManager.getState(BulletAppState.class);
-        //gamePlayAppState = stateManager.getState(GamePlayAppState.class);
+        worldAppState = stateManager.getState(WorldAppState.class);
         //startScreenAppState = stateManager.getState(StartScreenAppState.class);
         
         
@@ -139,6 +149,14 @@ public class PlayerAppState extends AbstractAppState implements PhysicsCollision
         magie=4;
         defencePhy=20;
         defenceMag=15;
+        Spatial playerAsset = assetManager.loadModel("Models/Ninja/Ninja.mesh.xml");       
+        playerAsset.setName("player");
+        playerAsset.scale(0.05f, 0.05f, 0.05f);
+        playerAsset.rotate(0.0f, -3.0f, 0.0f);
+        playerAsset.setLocalTranslation(0.0f, -5.0f, -2.0f);
+        player.attachChild(playerAsset);
+        rootNode.attachChild(player);
+
         
     }
     
@@ -181,7 +199,95 @@ public class PlayerAppState extends AbstractAppState implements PhysicsCollision
 
     @Override
     public void update(float tpf) {
-            
-                } //To change body of generated methods, choose Tools | Templates.
+            // Update recieving sound location
+        listener.setLocation(cam.getLocation());
+        listener.setRotation(cam.getRotation());
+        
+        // Move the excavator
+        Vector3f modelForwardDir = player.getWorldRotation().mult(Vector3f.UNIT_Z);
+        Vector3f modelLeftDir = player.getWorldRotation().mult(Vector3f.UNIT_X);
+        
+        // Check for change in direction
+        walkDirection.set(0,0,0);
+        if(!frontCollision && !backCollision) {
+            if(forward && frontCollision == false) {
+                walkDirection.addLocal(modelForwardDir.mult(speed));
+            } else if(backward && backCollision == false) {
+                walkDirection.addLocal(modelForwardDir.mult(speed).negate());
+            }
+        }
+        
+        if(frontCollision) {
+            walkDirection.addLocal(modelForwardDir.mult(speed).negate());
+            player.move(tpf*walkDirection.x, tpf*walkDirection.y, tpf*walkDirection.z);
+            frontCollision = false;
+        }
+        
+        if(backCollision) {
+            walkDirection.addLocal(modelForwardDir.mult(speed));
+            player.move(tpf*walkDirection.x, tpf*walkDirection.y, tpf*walkDirection.z);
+            backCollision = false;
+        }
+        
+        player.move(tpf*walkDirection.x, tpf*walkDirection.y, tpf*walkDirection.z);
+        
+        if(rotateLeft && leftCollision == false) {
+            Quaternion rotateL = new Quaternion().fromAngleAxis(FastMath.PI * tpf, Vector3f.UNIT_Y);
+            rotateL.multLocal(viewDirection);
+            player.rotate(0, tpf*viewDirection.y, 0);
+        } else if(rotateRight && rightCollision == false) {
+            Quaternion rotateR = new Quaternion().fromAngleAxis(-FastMath.PI * tpf, Vector3f.UNIT_Y);
+            rotateR.multLocal(viewDirection);
+            player.rotate(0, -tpf*viewDirection.y, 0);
+        }
+        
+        if(leftCollision) {
+            Quaternion rotateL = new Quaternion().fromAngleAxis(FastMath.PI * tpf, Vector3f.UNIT_Y);
+            rotateL.multLocal(viewDirection);
+            player.rotate(0, -tpf*viewDirection.y, 0);
+            leftCollision = false;
+        }
+        
+        if(rightCollision) {
+            Quaternion rotateL = new Quaternion().fromAngleAxis(FastMath.PI * tpf, Vector3f.UNIT_Y);
+            rotateL.multLocal(viewDirection);
+            player.rotate(0, tpf*viewDirection.y, 0);
+            rightCollision = false;
+        }
+        
+    } //To change body of generated methods, choose Tools | Templates.
+
+    public void bind(Nifty nifty, Screen screen) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void onStartScreen() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void onEndScreen() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    public void updateLvl(int niveau){
+        Screen screen = nifty.getScreen("hud");
+        Element txtLvl = screen.findElementByName("txtLvl");
+        TextRenderer textRendererLvl = txtLvl.getRenderer(TextRenderer.class);
+        textRendererLvl.setText("Niveau : "+ niveau);
+    }
+    
+    public void printName(String nom){
+        Screen screen = nifty.getScreen("hud");
+        Element txtName = screen.findElementByName("txtName");
+        TextRenderer textRendererName = txtName.getRenderer(TextRenderer.class);
+        textRendererName.setText("Nom : "+ nom);
+    }
+    
+    public void updateLife(int vie,int vieMax){
+        Screen screen = nifty.getScreen("hud");
+        Element txtLife = screen.findElementByName("txtLife");
+        TextRenderer textRendererLife = txtLife.getRenderer(TextRenderer.class);
+        textRendererLife.setText("Vie : "+ vie +"/"+ vieMax);
+    }
     
 }
