@@ -59,7 +59,7 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
     private Nifty nifty;
    
     
-    //Player informations
+    //Monstre informations
     protected String nom;
     protected String classe;
     protected double vie;
@@ -90,22 +90,16 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
         keyBindings = new keyBiding();
         
         bulletAppState = stateManager.getState(BulletAppState.class);
-        worldAppState = stateManager.getState(WorldAppState.class);
-        //startScreenAppState = stateManager.getState(StartScreenAppState.class);
-                
-        initHero();
-        // initFollowCam();
-        
-        
-        
+        worldAppState = stateManager.getState(WorldAppState.class);                
+        initMonster();       
         bulletAppState.getPhysicsSpace().addCollisionListener(this);
     }
     
-    public void initHero(){
-        nom="Jean";
-        classe="Guerrier";
-        vie=500;
-        vieMax=500;
+    public void initMonster(){
+        nom="Wolf";
+        classe="Wolf";
+        vie=100;
+        vieMax=100;
         niveau=1;
         force=8;
         magie=4;
@@ -142,27 +136,5 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
 
     public void onEndScreen() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    public void updateLvl(int niveau){
-        Screen screen = nifty.getScreen("hud");
-        Element txtLvl = screen.findElementByName("txtLvl");
-        TextRenderer textRendererLvl = txtLvl.getRenderer(TextRenderer.class);
-        textRendererLvl.setText("Niveau : "+ niveau);
-    }
-    
-    public void printName(String nom){
-        Screen screen = nifty.getScreen("hud");
-        Element txtName = screen.findElementByName("txtName");
-        TextRenderer textRendererName = txtName.getRenderer(TextRenderer.class);
-        textRendererName.setText("Nom : "+ nom);
-    }
-    
-    public void updateLife(int vie,int vieMax){
-        Screen screen = nifty.getScreen("hud");
-        Element txtLife = screen.findElementByName("txtLife");
-        TextRenderer textRendererLife = txtLife.getRenderer(TextRenderer.class);
-        textRendererLife.setText("Vie : "+ vie +"/"+ vieMax);
-    }
-    
+    }  
 }
