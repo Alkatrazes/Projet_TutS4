@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package RPG;
 
 /**
  *
@@ -76,32 +75,32 @@ public class JME extends SimpleApplication implements ActionListener, InputListe
         setUpLight();
         initCrossHairs();
         createTerrain();
-        Spatial maison = makeMaison(0f, 180.5f, -498.8811f, "3d_objects/structures/models/cg_house_A/cg_house_A.mesh.xml", "3d_objects/structures/textures/foundation_brick/D.png", 0f, 3.2f, 0f);
+        Spatial maison = makeMaison(0f, 120f, -498.8811f, "3d_objects/structures/models/cg_house_A/cg_house_A.mesh.xml", "3d_objects/structures/textures/foundation_brick/D.png", 0f, 3.2f, 0f);
         rootNode.attachChild(maison);
-        Spatial maison2 = makeMaison(60f, 180.5f, -498.8811f, "3d_objects/structures/models/cg_house_B/cg_house_B.mesh.xml", "3d_objects/structures/textures/cobblestone_tile_A/D.png", 0f, 3.2f, 0f);
+        Spatial maison2 = makeMaison(60f, 120f, -498.8811f, "3d_objects/structures/models/cg_house_B/cg_house_B.mesh.xml", "3d_objects/structures/textures/cobblestone_tile_A/D.png", 0f, 3.2f, 0f);
         rootNode.attachChild(maison2);
-        Spatial maison3 = makeMaison(120f, 180.5f, -498.8811f, "3d_objects/structures/models/cg_house_A/cg_house_A.mesh.xml", "3d_objects/structures/textures/foundation_brick/D.png", 0f, 3.2f, 0f);
+        Spatial maison3 = makeMaison(120f, 120f, -498.8811f, "3d_objects/structures/models/cg_house_A/cg_house_A.mesh.xml", "3d_objects/structures/textures/foundation_brick/D.png", 0f, 3.2f, 0f);
         rootNode.attachChild(maison3);
 
-        Spatial maison4 = makeMaison(0f, 180.5f, -418.8811f, "3d_objects/structures/models/cg_house_B/cg_house_B.mesh.xml", "3d_objects/structures/textures/cobblestone_tile_A/D.png", 0f, 0f, 0f);
+        Spatial maison4 = makeMaison(0f, 120f, -418.8811f, "3d_objects/structures/models/cg_house_B/cg_house_B.mesh.xml", "3d_objects/structures/textures/cobblestone_tile_A/D.png", 0f, 0f, 0f);
         rootNode.attachChild(maison4);
-        Spatial maison5 = makeMaison(60f, 180.5f, -418.8811f, "3d_objects/structures/models/cg_house_C/cg_house_C.mesh.xml", "3d_objects/structures/textures/cobblestone_tile_A/D.png", 0f, 0f, 0f);
+        Spatial maison5 = makeMaison(60f, 120f, -418.8811f, "3d_objects/structures/models/cg_house_C/cg_house_C.mesh.xml", "3d_objects/structures/textures/cobblestone_tile_A/D.png", 0f, 0f, 0f);
         rootNode.attachChild(maison5);
-        Spatial maison6 = makeMaison(120f, 180.5f, -418.8811f, "3d_objects/structures/models/cg_house_A/cg_house_A.mesh.xml", "3d_objects/structures/textures/foundation_brick/D.png", 0f, 0f, 0f);
+        Spatial maison6 = makeMaison(120f, 120f, -418.8811f, "3d_objects/structures/models/cg_house_A/cg_house_A.mesh.xml", "3d_objects/structures/textures/foundation_brick/D.png", 0f, 0f, 0f);
         rootNode.attachChild(maison6);
 
-        Spatial arbre = makeMaison(-40f, 180.5f, -418.8811f, "3d_objects/plants/trees/models/treeA/treeA.mesh.xml", "Textures/Terrain/splat/grass.jpg", 0f, 0f, 0f);
+        Spatial arbre = makeMaison(-40f, 120f, -418.8811f, "3d_objects/plants/trees/models/treeA/treeA.mesh.xml", "Textures/Terrain/splat/grass.jpg", 0f, 0f, 0f);
         rootNode.attachChild(arbre);
-        Spatial arbre2 = makeMaison(30f, 180.5f, -418.8811f, "3d_objects/plants/trees/models/treeA/treeA.mesh.xml", "Textures/Terrain/splat/grass.jpg", 0f, 0f, 0f);
+        Spatial arbre2 = makeMaison(30f, 120f, -418.8811f, "3d_objects/plants/trees/models/treeA/treeA.mesh.xml", "Textures/Terrain/splat/grass.jpg", 0f, 0f, 0f);
         rootNode.attachChild(arbre2);
-        Spatial arbre3 = makeMaison(90f, 180.5f, -418.8811f, "3d_objects/plants/trees/models/treeA/treeA.mesh.xml", "Textures/Terrain/splat/grass.jpg", 0f, 0f, 0f);
+        Spatial arbre3 = makeMaison(90f, 120f, -418.8811f, "3d_objects/plants/trees/models/treeA/treeA.mesh.xml", "Textures/Terrain/splat/grass.jpg", 0f, 0f, 0f);
         rootNode.attachChild(arbre3);
 
-        Spatial arbre4 = makeMaison(-40f, 180.5f, -498.8811f, "3d_objects/plants/trees/models/treeA/treeA.mesh.xml", "Textures/Terrain/splat/grass.jpg", 0f, 0f, 0f);
+        Spatial arbre4 = makeMaison(-40f, 120f, -498.8811f, "3d_objects/plants/trees/models/treeA/treeA.mesh.xml", "Textures/Terrain/splat/grass.jpg", 0f, 0f, 0f);
         rootNode.attachChild(arbre4);
-        Spatial arbre5 = makeMaison(30f, 180.5f, -498.8811f, "3d_objects/plants/trees/models/treeA/treeA.mesh.xml", "Textures/Terrain/splat/grass.jpg", 0f, 0f, 0f);
+        Spatial arbre5 = makeMaison(30f, 120f, -498.8811f, "3d_objects/plants/trees/models/treeA/treeA.mesh.xml", "Textures/Terrain/splat/grass.jpg", 0f, 0f, 0f);
         rootNode.attachChild(arbre5);
-        Spatial arbre6 = makeMaison(90f, 180.5f, -498.8811f, "3d_objects/plants/trees/models/treeA/treeA.mesh.xml", "Textures/Terrain/splat/grass.jpg", 0f, 0f, 0f);
+        Spatial arbre6 = makeMaison(90f, 120f, -498.8811f, "3d_objects/plants/trees/models/treeA/treeA.mesh.xml", "Textures/Terrain/splat/grass.jpg", 0f, 0f, 0f);
         rootNode.attachChild(arbre6);
 
         CapsuleCollisionShape capsuleShape = new CapsuleCollisionShape(1.5f, 6f, 1);
