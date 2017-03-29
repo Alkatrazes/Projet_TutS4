@@ -26,8 +26,10 @@ import com.jme3.math.Quaternion;
 import com.jme3.math.Vector3f;
 import com.jme3.renderer.Camera;
 import com.jme3.scene.CameraNode;
+import com.jme3.scene.Geometry;
 import com.jme3.scene.Node;
 import com.jme3.scene.Spatial;
+import com.jme3.scene.shape.Box;
 import com.jme3.terrain.geomipmap.TerrainLodControl;
 import com.jme3.terrain.geomipmap.TerrainQuad;
 import com.jme3.terrain.heightmap.AbstractHeightMap;
@@ -103,6 +105,13 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
         this.app.setDisplayFps(false);
         this.app.setDisplayStatView(false);
         flyCam.setMoveSpeed(100);
+        
+        Box monstre = new Box(10,10,10); // a cuboid default mesh
+        Geometry thing2 = new Geometry("thing2", monstre); 
+        Material mat = new Material(assetManager,"Common/MatDefs/Misc/ShowNormals.j3md");
+        thing2.setMaterial(mat);
+        thing2.setLocalTranslation(-100, -90, 0);
+        rootNode.attachChild(thing2);
 
         /** 1. Create terrain material and load four textures into it. */
         mat_terrain = new Material(assetManager,"Common/MatDefs/Terrain/Terrain.j3md");
@@ -179,11 +188,13 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
         defencePhy=20;
         defenceMag=15;
         
-        Spatial playerAsset = assetManager.loadModel("Models/Ninja/Ninja.mesh.xml");       
-        playerAsset.scale(50f, 50f, 50f);
-        playerAsset.rotate(0.0f, -3.0f, 0.0f);
-        playerAsset.setLocalTranslation(0.0f, -100.0f, 0);
-        rootNode.attachChild(playerAsset);
+        Box mesh = new Box(10,10,10); // a cuboid default mesh
+        Geometry thing = new Geometry("thing", mesh); 
+        Material mat = new Material(assetManager,"Common/MatDefs/Misc/ShowNormals.j3md");
+        thing.setMaterial(mat);
+        thing.setLocalTranslation(100, -90, 0);
+        rootNode.attachChild(thing);
+        
 
         
     }

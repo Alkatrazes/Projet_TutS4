@@ -1,4 +1,4 @@
-package test;
+package mygame;
 
 import com.jme3.system.AppSettings;
 import com.jme3.system.JmeCanvasContext;
@@ -23,7 +23,7 @@ public class Test7JME3 {
 	
 	// TODO : Add here a static variable which will make possible 
 	// to store a link to your JMonkeyEngine application 
-	private static Test5JME3 canvasApplication;
+	private static MainTest canvasApplication;
 	
 	private static Canvas canvas; // JAVA Swing Canvas
 	
@@ -147,7 +147,7 @@ public class Test7JME3 {
 	}
 	
 
-	public boolean combat() throws IOException{
+	public static void main(String[] args) throws IOException{
                 boolean resultat = false;
 		// create new JME appsettings
 		AppSettings settings = new AppSettings(true);
@@ -155,7 +155,7 @@ public class Test7JME3 {
 		settings.setSamples(8);
 
 		// TODO : create here a new JMonkeyEngine application
-		canvasApplication = new Test5JME3();
+		canvasApplication = new MainTest();
 		
 		// TODO : apply the settings and configure our application
 		// in the same way than in the "public static void main()" method from SimpleApplication
@@ -173,6 +173,5 @@ public class Test7JME3 {
 
 		// Create the JFrame with the Canvas on the middle
 		createNewJFrame();
-                return resultat;
 	}
 }
