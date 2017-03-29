@@ -147,7 +147,8 @@ public class Test7JME3 {
 	}
 	
 
-	public void combat() throws IOException{
+	public boolean combat() throws IOException{
+                boolean resultat = false;
 		// create new JME appsettings
 		AppSettings settings = new AppSettings(true);
 		settings.setResolution(1280, 800);
@@ -172,5 +173,6 @@ public class Test7JME3 {
 
 		// Create the JFrame with the Canvas on the middle
 		createNewJFrame();
+                return resultat;
 	}
 }
