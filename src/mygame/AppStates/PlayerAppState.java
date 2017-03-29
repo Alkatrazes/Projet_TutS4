@@ -154,8 +154,7 @@ public class PlayerAppState extends AbstractAppState implements PhysicsCollision
         playerAsset.scale(0.05f, 0.05f, 0.05f);
         playerAsset.rotate(0.0f, -3.0f, 0.0f);
         playerAsset.setLocalTranslation(0.0f, -5.0f, -2.0f);
-        player.attachChild(playerAsset);
-        rootNode.attachChild(player);
+        rootNode.attachChild(playerAsset);
 
         
     }

@@ -165,7 +165,7 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
         flyCam.setEnabled(false);
         bulletAppState = stateManager.getState(BulletAppState.class);
         worldAppState = stateManager.getState(WorldAppState.class);                
-        //initMonster();       
+        initMonster();       
     }
     
     public void initMonster(){
@@ -178,13 +178,12 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
         magie=4;
         defencePhy=20;
         defenceMag=15;
+        
         Spatial playerAsset = assetManager.loadModel("Models/Ninja/Ninja.mesh.xml");       
-        playerAsset.setName("player");
-        playerAsset.scale(0.05f, 0.05f, 0.05f);
+        playerAsset.scale(50f, 50f, 50f);
         playerAsset.rotate(0.0f, -3.0f, 0.0f);
-        playerAsset.setLocalTranslation(0.0f, -5.0f, -2.0f);
-        player.attachChild(playerAsset);
-        rootNode.attachChild(player);
+        playerAsset.setLocalTranslation(0.0f, -100.0f, 0);
+        rootNode.attachChild(playerAsset);
 
         
     }
