@@ -128,7 +128,7 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
 
     @Override
     public void update(float tpf) {
-         
+        rootNode.rotate(0, tpf/2, 0); 
         
     } //To change body of generated methods, choose Tools | Templates.
 
