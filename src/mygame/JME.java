@@ -112,7 +112,7 @@ public class JME extends SimpleApplication implements ActionListener, InputListe
         Spatial orc = assetManager.loadModel("Models/Sinbad/Sinbad.mesh.xml");
         orc.scale(0.8f, 0.8f, 0.8f);
         orc.rotate(0.0f, 30.0f, 0.0f);
-        orc.setLocalTranslation(250f, 123.8f, -600.8811f);
+        orc.setLocalTranslation(250f, 120f, -600.8811f);
         rootNode.attachChild(orc);
 
         CapsuleCollisionShape capsuleShape = new CapsuleCollisionShape(1.5f, 6f, 1);
@@ -121,7 +121,7 @@ public class JME extends SimpleApplication implements ActionListener, InputListe
         player.setJumpSpeed(20);
         player.setFallSpeed(speed * 30);
         player.setGravity(30);
-        player.setPhysicsLocation(new Vector3f(0f, 185, -498.8811f));
+        player.setPhysicsLocation(new Vector3f(25f, 124.5f, -450f));
         rootNode.attachChild(sceneModel);
         bulletAppState.getPhysicsSpace().add(map);
         bulletAppState.getPhysicsSpace().add(player);
