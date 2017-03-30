@@ -127,10 +127,10 @@ public class Test7JME3 implements ActionListener{
 
                 PanelSpe attaquePanel = new PanelSpe(gl);
                 attaquePanel.setImage("eleBut.jpg");
+                attaquePanel.add(eauBut, BorderLayout.SOUTH); 
                 attaquePanel.add(feuBut, BorderLayout.SOUTH);
-                attaquePanel.add(eauBut, BorderLayout.SOUTH);
-                attaquePanel.add(airBut, BorderLayout.SOUTH);
                 attaquePanel.add(terreBut, BorderLayout.SOUTH);
+                attaquePanel.add(airBut, BorderLayout.SOUTH);
                 attaquePanel.setPreferredSize(new Dimension(500,225));
                 
                 panel.add(attaquePanel, BorderLayout.SOUTH);
@@ -144,11 +144,6 @@ public class Test7JME3 implements ActionListener{
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
                 
-                feuBut.addActionListener(this);
-                eauBut.addActionListener(this);
-                airBut.addActionListener(this);
-                terreBut.addActionListener(this);
-
 		
 		// Fix an alignment bug on Mac OS X:
 		// re-add the canvas and resize the JFrame
@@ -156,6 +151,13 @@ public class Test7JME3 implements ActionListener{
 		frame.setSize(frame.getWidth()+1, frame.getHeight());
 		frame.setSize(frame.getWidth()-1, frame.getHeight());*/
 	}
+        
+        public void addBut(ActionListener listener){
+            feuBut.addActionListener(listener);
+            eauBut.addActionListener(listener);
+            airBut.addActionListener(listener);
+            terreBut.addActionListener(listener);
+        }
 
         public void actionPerformed(ActionEvent arg0) {
              //Lorsque l'on clique sur le bouton, on met à jour le JLabel
@@ -163,39 +165,40 @@ public class Test7JME3 implements ActionListener{
             int res = 0;
             double newLife;
              if (arg0.getSource() == feuBut){
+                 System.out.print("pomme");
                  attaque = canvasApplication.worldAppState.getAttqueFeuJoueur();
-                 res = canvasApplication.worldAppState.getResFeuMob()
+                 res = canvasApplication.worldAppState.getResFeuMob();
              }
              else if (arg0.getSource() == eauBut){
                  attaque = canvasApplication.worldAppState.getAttqueEauJoueur();
-                 res = canvasApplication.worldAppState.getResEauMob()
+                 res = canvasApplication.worldAppState.getResEauMob();
              }
              else if (arg0.getSource() == airBut){
                  attaque = canvasApplication.worldAppState.getAttqueAirJoueur();
-                 res = canvasApplication.worldAppState.getResAirMob()
+                 res = canvasApplication.worldAppState.getResAirMob();
              }
              else {
                  attaque = canvasApplication.worldAppState.getAttqueTerreJoueur();
-                 res = canvasApplication.worldAppState.getResTerreMob()
+                 res = canvasApplication.worldAppState.getResTerreMob();
              }
              
              newLife = (canvasApplication.worldAppState.getVieMob()+res) - attaque;
              canvasApplication.worldAppState.setVie(newLife,0);
              if (canvasApplication.worldAppState.getEleMob().equals("Feu")){
                  attaque = canvasApplication.worldAppState.getAttqueMob();
-                 res = canvasApplication.worldAppState.getResFeuMob();
+                 res = canvasApplication.worldAppState.getResFeuJoueur();
              }
              else if (canvasApplication.worldAppState.getEleMob().equals("Eau")){
                  attaque = canvasApplication.worldAppState.getAttqueMob();
-                 res = canvasApplication.worldAppState.getResEauMob();
+                 res = canvasApplication.worldAppState.getResEauJoueur();
              }
              else if (canvasApplication.worldAppState.getEleMob().equals("Air")){
                  attaque = canvasApplication.worldAppState.getAttqueMob();
-                 res = canvasApplication.worldAppState.getResAirMob();
+                 res = canvasApplication.worldAppState.getResAirJoueur();
              }
              else {
                  attaque = canvasApplication.worldAppState.getAttqueMob();
-                 res = canvasApplication.worldAppState.getResTerreMob();
+                 res = canvasApplication.worldAppState.getResTerreJoueur();
              }
              newLife = (canvasApplication.worldAppState.getVieJoueur()+res) - attaque;
              canvasApplication.worldAppState.setVie(newLife,1);

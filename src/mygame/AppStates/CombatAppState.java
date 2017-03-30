@@ -93,6 +93,10 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
     protected int attaqueAirJ;
     protected int attaqueFeuJ;
     protected int attaqueTerreJ;
+    protected int resEauJ;
+    protected int resAirJ;
+    protected int resFeuJ;
+    protected int resTerreJ;
     
     
     // Game settings
@@ -122,6 +126,10 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
         attaqueEauJ=4;
         attaqueTerreJ=20;
         attaqueAirJ=15;
+        resAirJ=2;
+        resFeuJ=4;
+        resEauJ=7;
+        resTerreJ=1;
         
         Box monstre = new Box(10,10,10); // a cuboid default mesh
         Geometry thing2 = new Geometry("thing2", monstre); 
@@ -152,7 +160,7 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
 
         /** 2. Create the height map */
         AbstractHeightMap heightmap = null;
-        Texture heightMapImage = assetManager.loadTexture("Textures/Terrain/splat/alpha1.png");
+        Texture heightMapImage = assetManager.loadTexture("Textures/HeightmapArene.png");
         heightmap = new ImageBasedHeightMap(heightMapImage.getImage());
         heightmap.load();
 
@@ -160,7 +168,7 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
         BitmapFont guiFont = assetManager.loadFont("Interface/Fonts/Default.fnt");
         BitmapText helloText = new BitmapText(guiFont, false);
         helloText.setSize(guiFont.getCharSet().getRenderedSize());
-        helloText.setText("100/100");
+        helloText.setText(getVieJoueur()+"/"+getVieMaxJoueur());
         helloText.setLocalTranslation(0, 1000, 0);
         this.app.getGuiNode().attachChild(helloText);
 
@@ -177,7 +185,7 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
 
         /** 4. We give the terrain its material, position & scale it, and attach it. */
         terrain.setMaterial(mat_terrain);
-        terrain.setLocalTranslation(0, -100, 0);
+        terrain.setLocalTranslation(0, -150, 0);
         terrain.setLocalScale(2f, 1f, 2f);
         // Charge un modèle de test_data (ogrexml + matériel + texture)
 
@@ -240,6 +248,34 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
         return attaqueFeuJ;
     }
     
+    public int getAttqueEauJoueur(){
+        return attaqueEauJ;
+    }
+    
+    public int getAttqueAirJoueur(){
+        return attaqueAirJ;
+    }
+    
+    public int getAttqueTerreJoueur(){
+        return attaqueTerreJ;
+    }
+    
+    public int getResFeuJoueur(){
+        return resFeuJ;
+    }
+    
+    public int getResEauJoueur(){
+        return resEauJ;
+    }
+    
+    public int getResAirJoueur(){
+        return resAirJ;
+    }
+    
+    public int getResTerreJoueur(){
+        return resTerreJ;
+    }
+    
     public double getVieMob(){
         return vie;
     }
@@ -247,6 +283,35 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
     public String getEleMob(){
         return elementType;
     }
+    
+    public int getResFeuMob(){
+        return resFeuJ;
+    }
+    
+    public int getResEauMob(){
+        return resEauJ;
+    }
+    
+    public int getResAirMob(){
+        return resAirJ;
+    }
+    
+    public int getResTerreMob(){
+        return resTerreJ;
+    }
+    
+    public int getAttqueMob(){
+        return attaque;
+    }
+    
+    public double getVieJoueur(){
+        return vieJ;
+    }
+    
+    
+    public double getVieMaxJoueur() {
+           return vieMaxJ;
+    }    
 
     public void setVie(double vie, int i){
         if (i == 0){
@@ -256,5 +321,6 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
             this.vieJ = vie;
         }
     }
+
     
 }
