@@ -16,6 +16,7 @@ import mygame.AppStates.WorldAppState;
  */
 public class MainTest extends SimpleApplication{
     private static MainTest app;
+    
     public static void main(String[] args) {
         app = new MainTest();
         app.start(); 
@@ -26,8 +27,8 @@ public class MainTest extends SimpleApplication{
         setDisplayFps(false);
         setDisplayStatView(false);
         
-        CombatAppState gameplayAppState = new CombatAppState();
-        stateManager.attach(gameplayAppState);
+        WorldAppState worldAppState = new WorldAppState();
+        stateManager.attach(worldAppState);
     }
       /** A centred plus sign to help the player aim. */
 }

@@ -42,6 +42,8 @@ import com.jme3.scene.Node;
 import com.jme3.scene.Spatial;
 import com.jme3.font.BitmapText;
 import com.jme3.app.SimpleApplication;
+import com.jme3.bullet.collision.shapes.CapsuleCollisionShape;
+import com.jme3.bullet.control.CharacterControl;
 import com.jme3.font.BitmapFont;
 import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.elements.Element;
@@ -49,13 +51,14 @@ import de.lessvoid.nifty.elements.render.TextRenderer;
 import de.lessvoid.nifty.screen.Screen;
 import de.lessvoid.nifty.screen.ScreenController;
 import mygame.keyBiding;
+import mygame.controls.screen.HudScreenController;
 
 
 /**
  *
  * @author Tanguy
  */
-public class PlayerAppState extends AbstractAppState implements PhysicsCollisionListener, ScreenController{
+public class PlayerAppState extends AbstractAppState implements PhysicsCollisionListener{
     /* AppState specific */
     private SimpleApplication app;
     private Camera cam;
@@ -74,6 +77,7 @@ public class PlayerAppState extends AbstractAppState implements PhysicsCollision
     private Listener listener;
     private keyBiding keyBindings;
     
+    
     private Nifty nifty;
 
     
@@ -85,14 +89,18 @@ public class PlayerAppState extends AbstractAppState implements PhysicsCollision
     // 
     private Vector3f walkDirection = new Vector3f(0,0,0);
     private Vector3f viewDirection = new Vector3f(0,1,0);
-    private boolean rotateLeft = false, rotateRight = false, forward = false, backward = false;
-    private float speed = 8;
+    
+    private Vector3f camDir = new Vector3f();
+    private Vector3f camLeft = new Vector3f();
+    
+    private boolean rotateLeft = false, rotateRight = false, forward = false, back = false, left = false, right = false;
+    private float speed = 1f;
     
     //Player informations
     protected String nom;
     protected String classe;
-    protected double vie;
-    protected double vieMax;
+    protected int vie;
+    protected int vieMax;
     protected int niveau;
     protected int force;
     protected int magie;
@@ -104,11 +112,14 @@ public class PlayerAppState extends AbstractAppState implements PhysicsCollision
     
     // Camera
     private CameraNode camNode;
-    
+    private CharacterControl joueur;
+
     // Game settings
     private Node playerStart;
     private BitmapFont guiFont;
     private WorldAppState worldAppState;
+    private HudScreenController hudScreenController;
+    private CombatAppState combatAppState;
     
     @Override
     public void initialize(AppStateManager stateManager, Application app) {
@@ -125,6 +136,7 @@ public class PlayerAppState extends AbstractAppState implements PhysicsCollision
         
         bulletAppState = stateManager.getState(BulletAppState.class);
         worldAppState = stateManager.getState(WorldAppState.class);
+        hudScreenController = new HudScreenController();
         //startScreenAppState = stateManager.getState(StartScreenAppState.class);
         
         
@@ -136,7 +148,7 @@ public class PlayerAppState extends AbstractAppState implements PhysicsCollision
         
         
         
-        bulletAppState.getPhysicsSpace().addCollisionListener(this);
+        //bulletAppState.getPhysicsSpace().addCollisionListener(this);
     }
     
     public void initHero(){
@@ -149,13 +161,19 @@ public class PlayerAppState extends AbstractAppState implements PhysicsCollision
         magie=4;
         defencePhy=20;
         defenceMag=15;
-        Spatial playerAsset = assetManager.loadModel("Models/Ninja/Ninja.mesh.xml");       
-        playerAsset.setName("player");
-        playerAsset.scale(0.05f, 0.05f, 0.05f);
-        playerAsset.rotate(0.0f, -3.0f, 0.0f);
-        playerAsset.setLocalTranslation(0.0f, -5.0f, -2.0f);
-        rootNode.attachChild(playerAsset);
-
+        //Spatial playerAsset = assetManager.loadModel("Models/Ninja/Ninja.mesh.xml");       
+        //playerAsset.setName("player");
+        //playerAsset.scale(0.05f, 0.05f, 0.05f);
+        //playerAsset.rotate(0.0f, -3.0f, 0.0f);
+        //playerAsset.setLocalTranslation(0.0f, -5.0f, -2.0f);
+        //rootNode.attachChild(playerAsset);
+        CapsuleCollisionShape capsuleShape = new CapsuleCollisionShape(1.5f, 6f, 1);
+        joueur = new CharacterControl(capsuleShape, 0.05f);
+        joueur.setJumpSpeed(20);
+        joueur.setFallSpeed(speed * 30);
+        joueur.setGravity(30);
+        joueur.setPhysicsLocation(new Vector3f(25f, 185, -450f));
+       // bulletAppState.getPhysicsSpace().add(player);
         
     }
     
@@ -168,15 +186,17 @@ public class PlayerAppState extends AbstractAppState implements PhysicsCollision
         inputManager.addMapping("Forward", new KeyTrigger(keyBindings.HERO_FORWARD));
         inputManager.addMapping("Backward", new KeyTrigger(keyBindings.HERO_BACKWARD));
         
-        inputManager.addMapping("Caracteristique", new KeyTrigger(keyBindings.HERO_INVENTAIRE));
+        //inputManager.addMapping("Caracteristique", new KeyTrigger(keyBindings.HERO_INVENTAIRE));
         
 
         //inputManager.addMapping("XRay", new KeyTrigger(KeyInput.KEY_X));
 
         // Add the names to the action listener.
-        inputManager.addListener(actionListner, "Left", "Right", "Forward", "Backward", "Caracteristique");
+        //inputManager.addListener(actionListner, "Left", "Right", "Forward", "Backward", "Caracteristique");
+        inputManager.addListener(analogListener, "Forward", "Back", "Left", "Right");
+
     }
-    
+    /*
     private ActionListener actionListner = new ActionListener() {
         public void onAction(String name, boolean isPressed, float tpf) {
             if(name.equals("Left")) {
@@ -190,14 +210,49 @@ public class PlayerAppState extends AbstractAppState implements PhysicsCollision
             }
             
         }
+    };*/
+    
+        private AnalogListener analogListener = new AnalogListener() {
+        public void onAnalog(String name, float value, float tpf) {
+            value = 0.4f;
+                if (name.equals("Forward")) {
+                    Vector3f v = joueur.getPhysicsLocation();
+                    joueur.setPhysicsLocation(new Vector3f(v.x, v.y, v.z - value * speed));
+                }
+                if (name.equals("Back")) {
+                    Vector3f v = joueur.getPhysicsLocation();
+                    joueur.setPhysicsLocation(new Vector3f(v.x, v.y, v.z + value * speed));
+                }
+                if (name.equals("Right")) {
+                    Vector3f v = joueur.getPhysicsLocation();
+                    joueur.setPhysicsLocation(new Vector3f(v.x + value * speed, v.y, v.z));
+                }
+                if (name.equals("Left")) {
+                    Vector3f v = joueur.getPhysicsLocation();
+                    joueur.setPhysicsLocation(new Vector3f(v.x - value * speed, v.y, v.z));
+                }
+        }
     };
 
     public void collision(PhysicsCollisionEvent event) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String nameA = event.getNodeA().getName();
+        String nameB = event.getNodeB().getName();
+        if(nameA.equals("player") && nameB.equals("ninjaNode")) {
+            // Belt hits World
+            System.out.println("Veuillez tuer ce monstre");
+        }
+        
+        if(nameA.equals("player") && nameB.equals("orcNode")) {
+            // Belt hits World
+            combatAppState = new CombatAppState();
+            stateManager.attach(combatAppState);
+            
+        }
     }
 
     @Override
     public void update(float tpf) {
+        /*
             // Update recieving sound location
         listener.setLocation(cam.getLocation());
         listener.setRotation(cam.getRotation());
@@ -252,41 +307,39 @@ public class PlayerAppState extends AbstractAppState implements PhysicsCollision
             rotateL.multLocal(viewDirection);
             player.rotate(0, tpf*viewDirection.y, 0);
             rightCollision = false;
+        }*/
+       camDir.set(cam.getDirection()).multLocal(0.6f);
+        camLeft.set(cam.getLeft()).multLocal(0.4f);
+        viewDirection.set(camDir);
+        walkDirection.set(0, 0, 0);
+
+        if (left) {
+            walkDirection.addLocal(camLeft);
         }
+        if (right) {
+            walkDirection.addLocal(camLeft.negate());
+        }
+        if (forward) {
+            walkDirection.addLocal(camDir);
+        }
+        if (back) {
+            walkDirection.addLocal(camDir.negate());
+        }
+        joueur.setWalkDirection(walkDirection);
+        joueur.setViewDirection(viewDirection);
+        cam.setLocation(joueur.getPhysicsLocation());
+        //inputManager.setCursorVisible(true);
+        hudScreenController.updateLvl(niveau);
+        hudScreenController.printName(nom);
+        hudScreenController.updateLife(vie,vieMax);
+        
+        
+        
         
     } //To change body of generated methods, choose Tools | Templates.
 
-    public void bind(Nifty nifty, Screen screen) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void onStartScreen() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void onEndScreen() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
-    public void updateLvl(int niveau){
-        Screen screen = nifty.getScreen("hud");
-        Element txtLvl = screen.findElementByName("txtLvl");
-        TextRenderer textRendererLvl = txtLvl.getRenderer(TextRenderer.class);
-        textRendererLvl.setText("Niveau : "+ niveau);
-    }
     
-    public void printName(String nom){
-        Screen screen = nifty.getScreen("hud");
-        Element txtName = screen.findElementByName("txtName");
-        TextRenderer textRendererName = txtName.getRenderer(TextRenderer.class);
-        textRendererName.setText("Nom : "+ nom);
-    }
-    
-    public void updateLife(int vie,int vieMax){
-        Screen screen = nifty.getScreen("hud");
-        Element txtLife = screen.findElementByName("txtLife");
-        TextRenderer textRendererLife = txtLife.getRenderer(TextRenderer.class);
-        textRendererLife.setText("Vie : "+ vie +"/"+ vieMax);
-    }
+   
     
 }

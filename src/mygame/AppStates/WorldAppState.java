@@ -10,6 +10,7 @@ import com.jme3.app.state.AbstractAppState;
 import com.jme3.app.state.AppStateManager;
 import com.jme3.asset.AssetManager;
 import com.jme3.bullet.BulletAppState;
+import com.jme3.bullet.collision.shapes.CapsuleCollisionShape;
 import com.jme3.bullet.collision.shapes.CollisionShape;
 import com.jme3.bullet.control.RigidBodyControl;
 import com.jme3.bullet.util.CollisionShapeFactory;
@@ -126,38 +127,56 @@ public class WorldAppState extends AbstractAppState{
         TerrainLodControl control = new TerrainLodControl(terrain, app.getCamera());
         terrain.addControl(control);
         
-        Spatial maison = makeMaison(0f, 180.5f, -498.8811f, "3d_objects/structures/models/cg_house_A/cg_house_A.mesh.xml", "3d_objects/structures/textures/foundation_brick/D.png", 0f, 3.2f, 0f);
+        Spatial maison = makeMaison(0f, 120f, -498.8811f, "3d_objects/structures/models/cg_house_A/cg_house_A.mesh.xml", "3d_objects/structures/textures/foundation_brick/D.png", 0f, 3.2f, 0f);
         rootNode.attachChild(maison);
-        Spatial maison2 = makeMaison(60f, 180.5f, -498.8811f, "3d_objects/structures/models/cg_house_B/cg_house_B.mesh.xml", "3d_objects/structures/textures/cobblestone_tile_A/D.png", 0f, 3.2f, 0f);
+        Spatial maison2 = makeMaison(60f, 120f, -498.8811f, "3d_objects/structures/models/cg_house_B/cg_house_B.mesh.xml", "3d_objects/structures/textures/cobblestone_tile_A/D.png", 0f, 3.2f, 0f);
         rootNode.attachChild(maison2);
-        Spatial maison3 = makeMaison(120f, 180.5f, -498.8811f, "3d_objects/structures/models/cg_house_A/cg_house_A.mesh.xml", "3d_objects/structures/textures/foundation_brick/D.png", 0f, 3.2f, 0f);
+        Spatial maison3 = makeMaison(120f, 120f, -498.8811f, "3d_objects/structures/models/cg_house_A/cg_house_A.mesh.xml", "3d_objects/structures/textures/foundation_brick/D.png", 0f, 3.2f, 0f);
         rootNode.attachChild(maison3);
 
-        Spatial maison4 = makeMaison(0f, 180.5f, -418.8811f, "3d_objects/structures/models/cg_house_B/cg_house_B.mesh.xml", "3d_objects/structures/textures/cobblestone_tile_A/D.png", 0f, 0f, 0f);
+        Spatial maison4 = makeMaison(0f, 120f, -418.8811f, "3d_objects/structures/models/cg_house_B/cg_house_B.mesh.xml", "3d_objects/structures/textures/cobblestone_tile_A/D.png", 0f, 0f, 0f);
         rootNode.attachChild(maison4);
-        Spatial maison5 = makeMaison(60f, 180.5f, -418.8811f, "3d_objects/structures/models/cg_house_C/cg_house_C.mesh.xml", "3d_objects/structures/textures/cobblestone_tile_A/D.png", 0f, 0f, 0f);
+        Spatial maison5 = makeMaison(60f, 120f, -418.8811f, "3d_objects/structures/models/cg_house_C/cg_house_C.mesh.xml", "3d_objects/structures/textures/cobblestone_tile_A/D.png", 0f, 0f, 0f);
         rootNode.attachChild(maison5);
-        Spatial maison6 = makeMaison(120f, 180.5f, -418.8811f, "3d_objects/structures/models/cg_house_A/cg_house_A.mesh.xml", "3d_objects/structures/textures/foundation_brick/D.png", 0f, 0f, 0f);
+        Spatial maison6 = makeMaison(120f, 120f, -418.8811f, "3d_objects/structures/models/cg_house_A/cg_house_A.mesh.xml", "3d_objects/structures/textures/foundation_brick/D.png", 0f, 0f, 0f);
         rootNode.attachChild(maison6);
 
-        Spatial arbre = makeTree(-40f, 180.5f, -418.8811f, "3d_objects/plants/trees/models/treeA/treeA.mesh.xml", "Textures/Terrain/splat/grass.jpg", 0f, 0f, 0f);
+        Spatial arbre = makeMaison(-40f, 120f, -418.8811f, "3d_objects/plants/trees/models/treeA/treeA.mesh.xml", "Textures/Terrain/splat/grass.jpg", 0f, 0f, 0f);
         rootNode.attachChild(arbre);
-        Spatial arbre2 = makeTree(30f, 180.5f, -418.8811f, "3d_objects/plants/trees/models/treeA/treeA.mesh.xml", "Textures/Terrain/splat/grass.jpg", 0f, 0f, 0f);
+        Spatial arbre2 = makeMaison(30f, 120f, -418.8811f, "3d_objects/plants/trees/models/treeA/treeA.mesh.xml", "Textures/Terrain/splat/grass.jpg", 0f, 0f, 0f);
         rootNode.attachChild(arbre2);
-        Spatial arbre3 = makeTree(90f, 180.5f, -418.8811f, "3d_objects/plants/trees/models/treeA/treeA.mesh.xml", "Textures/Terrain/splat/grass.jpg", 0f, 0f, 0f);
+        Spatial arbre3 = makeMaison(90f, 120f, -418.8811f, "3d_objects/plants/trees/models/treeA/treeA.mesh.xml", "Textures/Terrain/splat/grass.jpg", 0f, 0f, 0f);
         rootNode.attachChild(arbre3);
 
-        Spatial arbre4 = makeTree(-40f, 180.5f, -498.8811f, "3d_objects/plants/trees/models/treeA/treeA.mesh.xml", "Textures/Terrain/splat/grass.jpg", 0f, 0f, 0f);
+        Spatial arbre4 = makeMaison(-40f, 120f, -498.8811f, "3d_objects/plants/trees/models/treeA/treeA.mesh.xml", "Textures/Terrain/splat/grass.jpg", 0f, 0f, 0f);
         rootNode.attachChild(arbre4);
-        Spatial arbre5 = makeTree(30f, 180.5f, -498.8811f, "3d_objects/plants/trees/models/treeA/treeA.mesh.xml", "Textures/Terrain/splat/grass.jpg", 0f, 0f, 0f);
+        Spatial arbre5 = makeMaison(30f, 120f, -498.8811f, "3d_objects/plants/trees/models/treeA/treeA.mesh.xml", "Textures/Terrain/splat/grass.jpg", 0f, 0f, 0f);
         rootNode.attachChild(arbre5);
-        Spatial arbre6 = makeTree(90f, 180.5f, -498.8811f, "3d_objects/plants/trees/models/treeA/treeA.mesh.xml", "Textures/Terrain/splat/grass.jpg", 0f, 0f, 0f);
+        Spatial arbre6 = makeMaison(90f, 120f, -498.8811f, "3d_objects/plants/trees/models/treeA/treeA.mesh.xml", "Textures/Terrain/splat/grass.jpg", 0f, 0f, 0f);
         rootNode.attachChild(arbre6);
+        
+        Node ninjaNode = new Node();
+        Spatial ninja = assetManager.loadModel("Models/Ninja/Ninja.mesh.xml");
+        ninja.scale(0.05f, 0.05f, 0.05f);
+        ninja.rotate(0.0f, -40.0f, 0.0f);
+        ninja.setLocalTranslation(10f, 120f, -485.8811f);
+        ninjaNode.attachChild(ninja);
+        rootNode.attachChild(ninjaNode);
+        
+        Node orcNode = new Node();
+        Spatial orc = assetManager.loadModel("Models/Sinbad/Sinbad.mesh.xml");
+        orc.scale(0.8f, 0.8f, 0.8f);
+        orc.rotate(0.0f, 30.0f, 0.0f);
+        orc.setLocalTranslation(250f, 123.8f, -600.8811f);
+        orcNode.attachChild(orc);
+        rootNode.attachChild(orcNode);
 
         sceneModel = terrain;
 
         CollisionShape sceneShape = CollisionShapeFactory.createMeshShape((Node) sceneModel);
         map = new RigidBodyControl(sceneShape, 0);
+        CapsuleCollisionShape capsuleShape = new CapsuleCollisionShape(1.5f, 6f, 1);
+                
         sceneModel.addControl(map);
      }
      protected Spatial makeMaison(float a, float b, float c, String model, String texture, float ra, float rb, float rc) {
