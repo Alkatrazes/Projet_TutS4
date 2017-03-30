@@ -168,20 +168,37 @@ public class Test7JME3 implements ActionListener{
              }
              else if (arg0.getSource() == eauBut){
                  attaque = canvasApplication.worldAppState.getAttqueEauJoueur();
+                 res = canvasApplication.worldAppState.getResEauMob()
              }
              else if (arg0.getSource() == airBut){
                  attaque = canvasApplication.worldAppState.getAttqueAirJoueur();
+                 res = canvasApplication.worldAppState.getResAirMob()
              }
              else {
                  attaque = canvasApplication.worldAppState.getAttqueTerreJoueur();
+                 res = canvasApplication.worldAppState.getResTerreMob()
              }
              
-             newLife = canvasApplication.worldAppState.getVieMob() - attaque;
+             newLife = (canvasApplication.worldAppState.getVieMob()+res) - attaque;
              canvasApplication.worldAppState.setVie(newLife,0);
              if (canvasApplication.worldAppState.getEleMob().equals("Feu")){
-                 
+                 attaque = canvasApplication.worldAppState.getAttqueMob();
+                 res = canvasApplication.worldAppState.getResFeuMob();
              }
-             
+             else if (canvasApplication.worldAppState.getEleMob().equals("Eau")){
+                 attaque = canvasApplication.worldAppState.getAttqueMob();
+                 res = canvasApplication.worldAppState.getResEauMob();
+             }
+             else if (canvasApplication.worldAppState.getEleMob().equals("Air")){
+                 attaque = canvasApplication.worldAppState.getAttqueMob();
+                 res = canvasApplication.worldAppState.getResAirMob();
+             }
+             else {
+                 attaque = canvasApplication.worldAppState.getAttqueMob();
+                 res = canvasApplication.worldAppState.getResTerreMob();
+             }
+             newLife = (canvasApplication.worldAppState.getVieJoueur()+res) - attaque;
+             canvasApplication.worldAppState.setVie(newLife,1);
         }      
 
 	
