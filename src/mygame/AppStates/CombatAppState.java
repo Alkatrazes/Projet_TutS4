@@ -80,12 +80,21 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
     protected double vie;
     protected double vieMax;
     protected int niveau;
-    protected int force;
-    protected int magie;
-    protected int attaquePhy;
-    protected int attaqueMag;
-    protected int defencePhy;
-    protected int defenceMag;
+    protected int attaqueEau;
+    protected int attaqueAir;
+    protected int attaqueFeu;
+    protected int attaqueTerre;
+    
+    //Joueur informations
+    protected String nomJ;
+    protected String classeJ;
+    protected double vieJ;
+    protected double vieMaxJ;
+    protected int niveauJ;
+    protected int attaqueEauJ;
+    protected int attaqueAirJ;
+    protected int attaqueFeuJ;
+    protected int attaqueTerreJ;
     
     
     // Game settings
@@ -105,6 +114,16 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
         this.app.setDisplayFps(false);
         this.app.setDisplayStatView(false);
         flyCam.setMoveSpeed(100);
+        
+        nomJ="Wolf";
+        classeJ="Wolf";
+        vieJ=100;
+        vieMaxJ=100;
+        niveauJ=1;
+        attaqueFeuJ=8;
+        attaqueEauJ=4;
+        attaqueTerreJ=20;
+        attaqueAirJ=15;
         
         Box monstre = new Box(10,10,10); // a cuboid default mesh
         Geometry thing2 = new Geometry("thing2", monstre); 
@@ -183,10 +202,10 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
         vie=100;
         vieMax=100;
         niveau=1;
-        force=8;
-        magie=4;
-        defencePhy=20;
-        defenceMag=15;
+        attaqueFeu=8;
+        attaqueEau=4;
+        attaqueTerre=20;
+        attaqueAir=15;
         
         Box mesh = new Box(10,10,10); // a cuboid default mesh
         Geometry thing = new Geometry("thing", mesh); 
@@ -219,5 +238,22 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
 
     public void onEndScreen() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }  
+    } 
+    
+    public int getAttqueFeuJoueur(){
+        return attaqueFeuJ;
+    }
+    
+    public double getVieMob(){
+        return vie;
+    }
+    
+    public void setVie(double vie, int i){
+        if (i == 0){
+            this.vie = vie;
+        }
+        else {
+            this.vieJ = vie;
+        }
+    }
 }

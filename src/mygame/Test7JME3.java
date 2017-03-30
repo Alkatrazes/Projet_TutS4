@@ -18,7 +18,7 @@ import javax.imageio.ImageIO;
 
 import javax.swing.*;
 
-public class Test7JME3 {
+public class Test7JME3 implements ActionListener{
     
 	
 	// TODO : Add here a static variable which will make possible 
@@ -26,7 +26,9 @@ public class Test7JME3 {
 	private static MainTest canvasApplication;
 	
 	private static Canvas canvas; // JAVA Swing Canvas
-	
+	private static JButton feuBut;
+        private static JButton eauBut;
+
 	private static JFrame frame;
 	private static JPanel panel;
 	
@@ -97,12 +99,12 @@ public class Test7JME3 {
 				dial.setVisible(true);
 			}
 		});
-                JButton feuBut = new JButton();
+                feuBut = new JButton();
                 feuBut.setContentAreaFilled(false);
                 feuBut.setFocusPainted(false);
                 feuBut.setPreferredSize(new Dimension(200,200));
                 
-		JButton eauBut = new JButton();
+		eauBut = new JButton();
                 eauBut.setContentAreaFilled(false);
                 eauBut.setFocusPainted(false);
                 eauBut.setPreferredSize(new Dimension(200,200));
@@ -116,6 +118,7 @@ public class Test7JME3 {
                 terreBut.setContentAreaFilled(false);
                 terreBut.setFocusPainted(false);
                 terreBut.setPreferredSize(new Dimension(200,200));
+                
                 
                 GridLayout gl = new GridLayout(1, 4);
                 gl.setHgap(20);
@@ -138,6 +141,8 @@ public class Test7JME3 {
 		frame.pack();
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
+                feuBut.addActionListener(this);
+
 		
 		// Fix an alignment bug on Mac OS X:
 		// re-add the canvas and resize the JFrame
@@ -145,6 +150,22 @@ public class Test7JME3 {
 		frame.setSize(frame.getWidth()+1, frame.getHeight());
 		frame.setSize(frame.getWidth()-1, frame.getHeight());*/
 	}
+
+        public void actionPerformed(ActionEvent arg0) {
+             //Lorsque l'on clique sur le bouton, on met à jour le JLabel
+            int attaque;
+            double newLife;
+             if (arg0.getSource() == feuBut){
+                 attaque = canvasApplication.worldAppState.getAttqueFeuJoueur();
+             }
+             else if (arg0.getSource() == eauBut){
+                 attaque = canvasApplication.worldAppState.getAttqueEauJoueur();
+             }
+             
+             newLife = canvasApplication.worldAppState.getVieMob() - attaque;
+             canvasApplication.worldAppState.setVie(newLife,0);
+        }      
+
 	
 
 	public static void main(String[] args) throws IOException{
