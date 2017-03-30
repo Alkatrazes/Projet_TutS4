@@ -80,10 +80,8 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
     protected double vie;
     protected double vieMax;
     protected int niveau;
-    protected int attaqueEau;
-    protected int attaqueAir;
-    protected int attaqueFeu;
-    protected int attaqueTerre;
+    protected int attaque;
+    protected String elementType;
     
     //Joueur informations
     protected String nomJ;
@@ -202,10 +200,8 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
         vie=100;
         vieMax=100;
         niveau=1;
-        attaqueFeu=8;
-        attaqueEau=4;
-        attaqueTerre=20;
-        attaqueAir=15;
+        attaque=8;
+        elementType = "Feu";
         
         Box mesh = new Box(10,10,10); // a cuboid default mesh
         Geometry thing = new Geometry("thing", mesh); 
@@ -248,6 +244,10 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
         return vie;
     }
     
+    public String getEleMob(){
+        return elementType;
+    }
+
     public void setVie(double vie, int i){
         if (i == 0){
             this.vie = vie;
@@ -256,4 +256,5 @@ public class CombatAppState extends AbstractAppState implements PhysicsCollision
             this.vieJ = vie;
         }
     }
+    
 }

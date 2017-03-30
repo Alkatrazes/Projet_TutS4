@@ -28,6 +28,8 @@ public class Test7JME3 implements ActionListener{
 	private static Canvas canvas; // JAVA Swing Canvas
 	private static JButton feuBut;
         private static JButton eauBut;
+        private static JButton airBut;
+        private static JButton terreBut;
 
 	private static JFrame frame;
 	private static JPanel panel;
@@ -109,12 +111,12 @@ public class Test7JME3 implements ActionListener{
                 eauBut.setFocusPainted(false);
                 eauBut.setPreferredSize(new Dimension(200,200));
                 
-                JButton airBut = new JButton();
+                airBut = new JButton();
                 airBut.setContentAreaFilled(false);
                 airBut.setFocusPainted(false);
                 airBut.setPreferredSize(new Dimension(200,200));
                 
-                JButton terreBut = new JButton();
+                terreBut = new JButton();
                 terreBut.setContentAreaFilled(false);
                 terreBut.setFocusPainted(false);
                 terreBut.setPreferredSize(new Dimension(200,200));
@@ -141,7 +143,11 @@ public class Test7JME3 implements ActionListener{
 		frame.pack();
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
+                
                 feuBut.addActionListener(this);
+                eauBut.addActionListener(this);
+                airBut.addActionListener(this);
+                terreBut.addActionListener(this);
 
 		
 		// Fix an alignment bug on Mac OS X:
@@ -153,17 +159,29 @@ public class Test7JME3 implements ActionListener{
 
         public void actionPerformed(ActionEvent arg0) {
              //Lorsque l'on clique sur le bouton, on met à jour le JLabel
-            int attaque;
+            int attaque = 0;
+            int res = 0;
             double newLife;
              if (arg0.getSource() == feuBut){
                  attaque = canvasApplication.worldAppState.getAttqueFeuJoueur();
+                 res = canvasApplication.worldAppState.getResFeuMob()
              }
              else if (arg0.getSource() == eauBut){
                  attaque = canvasApplication.worldAppState.getAttqueEauJoueur();
              }
+             else if (arg0.getSource() == airBut){
+                 attaque = canvasApplication.worldAppState.getAttqueAirJoueur();
+             }
+             else {
+                 attaque = canvasApplication.worldAppState.getAttqueTerreJoueur();
+             }
              
              newLife = canvasApplication.worldAppState.getVieMob() - attaque;
              canvasApplication.worldAppState.setVie(newLife,0);
+             if (canvasApplication.worldAppState.getEleMob().equals("Feu")){
+                 
+             }
+             
         }      
 
 	
